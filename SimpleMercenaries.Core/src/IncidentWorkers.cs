@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
-namespace RMC
+namespace SimpleMercenaries.Core
 {
     public class IncidentParms_Deploy : IncidentParms, IExposable
     {

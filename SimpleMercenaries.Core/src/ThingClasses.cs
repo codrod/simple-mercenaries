@@ -6,7 +6,7 @@ using Verse;
 using Verse.AI;
 using RimWorld;
 
-namespace RMC
+namespace SimpleMercenaries.Core
 {
     public class Building_MilitaryCommsConsole : RimWorld.Building_CommsConsole
     {
@@ -22,7 +22,7 @@ namespace RMC
 
         public new void GiveUseCommsJob(Pawn negotiator, ICommunicable target)
         {
-            Job job = new Job(DefDatabase<JobDef>.GetNamed("RMC_JobDef_UseMilitaryCommsConsole"), this);
+            Job job = new Job(DefDatabase<JobDef>.GetNamed("SMercs_JobDef_UseMilitaryCommsConsole"), this);
             job.commTarget = target;
             negotiator.jobs.TryTakeOrderedJob(job, JobTag.Misc);
             PlayerKnowledgeDatabase.KnowledgeDemonstrated(ConceptDefOf.OpeningComms, KnowledgeAmount.Total);

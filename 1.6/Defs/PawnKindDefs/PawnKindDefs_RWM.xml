@@ -1,11 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<PawnKindDef Name="RMC_PawnKindDef_RWM_Base" Abstract="True">
+	<PawnKindDef Name="SMercs_PawnKindDef_RWM_Base" Abstract="True">
 		<race>Human</race>
-		<defaultFactionType>RMC_FactionDef_RWM_Colony</defaultFactionType>
-    <isFighter>true</isFighter>
-    <combatPower>100</combatPower>
+		<defaultFactionType>SMercs_FactionDef_RWM_Colony</defaultFactionType>
+		<isFighter>true</isFighter>
+		<combatPower>100</combatPower>
 		<chemicalAddictionChance>0.15</chemicalAddictionChance>
 		<invNutrition>2.55</invNutrition>
 		<backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
@@ -14,17 +14,17 @@
 			<min>0</min>
 			<max>2</max>
 		</combatEnhancingDrugsCount>
-    <minGenerationAge>18</minGenerationAge>
-    <maxGenerationAge>45</maxGenerationAge>
+		<minGenerationAge>18</minGenerationAge>
+		<maxGenerationAge>45</maxGenerationAge>
 	</PawnKindDef>
-	
-	<PawnKindDef ParentName="RMC_PawnKindDef_RWM_Base">
-		<defName>RMC_PawnKindDef_RWM_Scavenger</defName>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Base">
+		<defName>SMercs_PawnKindDef_RWM_Scavenger</defName>
 		<label>scavenger</label>
 		<combatPower>65</combatPower>
 		<chemicalAddictionChance>0.06</chemicalAddictionChance>
 		<weaponTags>
-			<li>RMC_WeaponTag_Simple_Gun</li>
+			<li>SMercs_WeaponTag_Simple_Gun</li>
 		</weaponTags>
 		<weaponMoney>
 			<min>200</min>
@@ -53,7 +53,8 @@
 
 	<!-- Low merc tier - grenadiers -->
 
-	<PawnKindDef Abstract="True" Name="RMC_PawnKindDef_RWM_Grenadier_Base" ParentName="RMC_PawnKindDef_RWM_Base">
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_RWM_Grenadier_Base"
+		ParentName="SMercs_PawnKindDef_RWM_Base">
 		<race>Human</race>
 		<combatPower>100</combatPower>
 		<gearHealthRange>
@@ -100,8 +101,8 @@
 		</inventoryOptions>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="RMC_PawnKindDef_RWM_Grenadier_Base">
-		<defName>RMC_PawnKindDef_RWM_Grenadier_Destructive</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Grenadier_Base">
+		<defName>SMercs_PawnKindDef_RWM_Grenadier_Destructive</defName>
 		<label>grenadier</label>
 		<canBeSapper>true</canBeSapper>
 		<weaponTags>
@@ -113,9 +114,10 @@
 		</weaponMoney>
 	</PawnKindDef>
 
-  <!-- Mid merc tier - gunner, slasher, sniper, heavy -->
+	<!-- Mid merc tier - gunner, slasher, sniper, heavy -->
 
-	<PawnKindDef ParentName="RMC_PawnKindDef_RWM_Base" Name="RMC_PawnKindDef_RWM_MidTier_Base" Abstract="True">
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Base" Name="SMercs_PawnKindDef_RWM_MidTier_Base"
+		Abstract="True">
 		<techHediffsChance>0.15</techHediffsChance>
 		<techHediffsMoney>
 			<min>700</min>
@@ -127,8 +129,8 @@
 		</techHediffsTags>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="RMC_PawnKindDef_RWM_MidTier_Base">
-		<defName>RMC_PawnKindDef_RWM_Gunner</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base">
+		<defName>SMercs_PawnKindDef_RWM_Gunner</defName>
 		<label>gunner</label>
 		<combatPower>90</combatPower>
 		<gearHealthRange>
@@ -152,7 +154,7 @@
 			<max>555</max>
 		</weaponMoney>
 		<weaponTags>
-			<li>RMC_WeaponTag_Advanced_Gun</li>
+			<li>SMercs_WeaponTag_Advanced_Gun</li>
 		</weaponTags>
 		<combatEnhancingDrugsChance>0.05</combatEnhancingDrugsChance>
 		<combatEnhancingDrugsCount>
@@ -180,8 +182,8 @@
 		</inventoryOptions>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="RMC_PawnKindDef_RWM_MidTier_Base">
-		<defName>RMC_PawnKindDef_RWM_Sniper</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base">
+		<defName>SMercs_PawnKindDef_RWM_Sniper</defName>
 		<label>sniper</label>
 		<combatPower>110</combatPower>
 		<gearHealthRange>
@@ -226,9 +228,9 @@
 			</subOptionsChooseOne>
 		</inventoryOptions>
 	</PawnKindDef>
-  
-	<PawnKindDef ParentName="RMC_PawnKindDef_RWM_MidTier_Base">
-		<defName>RMC_PawnKindDef_RWM_Slasher</defName>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base">
+		<defName>SMercs_PawnKindDef_RWM_Slasher</defName>
 		<label>slasher</label>
 		<combatPower>150</combatPower>
 		<canBeSapper>true</canBeSapper>
@@ -278,9 +280,10 @@
 		</inventoryOptions>
 	</PawnKindDef>
 
-  <!-- Elite tier - merc elite, pirate boss -->
-  
-	<PawnKindDef Abstract="True" Name="RMC_PawnKindDef_RWM_EliteTier_Base" ParentName="RMC_PawnKindDef_RWM_Base">
+	<!-- Elite tier - merc elite, pirate boss -->
+
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_RWM_EliteTier_Base"
+		ParentName="SMercs_PawnKindDef_RWM_Base">
 		<combatPower>150</combatPower>
 		<backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality>
 		<gearHealthRange>
@@ -310,7 +313,7 @@
 		</weaponTags>
 		<techHediffsMoney>
 			<min>1000</min>
-      <max>2000</max>
+			<max>2000</max>
 		</techHediffsMoney>
 		<techHediffsTags>
 			<li>Advanced</li>
@@ -323,8 +326,8 @@
 		</combatEnhancingDrugsCount>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="RMC_PawnKindDef_RWM_EliteTier_Base">
-		<defName>RMC_PawnKindDef_RWM_Elite</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_EliteTier_Base">
+		<defName>SMercs_PawnKindDef_RWM_Elite</defName>
 		<label>elite mercenary</label>
 		<labelPlural>elite mercenaries</labelPlural>
 		<inventoryOptions>

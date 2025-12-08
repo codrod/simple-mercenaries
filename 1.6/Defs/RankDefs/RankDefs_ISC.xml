@@ -2,111 +2,111 @@
 
 <Defs>
 
-	<RMC.RankDef>
-		<defName>RMC_RankDef_ISC_Colonist</defName>
+	<SimpleMercenaries.Core.RankDef>
+		<defName>SMercs_RankDef_ISC_Colonist</defName>
 		<label>Colonist</label>
-		<pawnKindDef>RMC_PawnKindDef_ISC_Colonist</pawnKindDef>
+		<pawnKindDef>SMercs_PawnKindDef_ISC_Colonist</pawnKindDef>
 		<weapon>Gun_Autopistol</weapon>
 		<cost>500</cost>
 		<spawnTime>60000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef Abstract="True" Name="RMC_RankDef_ISC_Spacemarine_Base">
-		<childhood>RMC_BackstoryDef_ISC_Recruit</childhood>
-		<adulthood>RMC_BackstoryDef_ISC_Spacemarine</adulthood>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef Abstract="True" Name="SMercs_RankDef_ISC_Spacemarine_Base">
+		<!--childhood>SMercs_BackstoryDef_ISC_Recruit</childhood>
+		<adulthood>SMercs_BackstoryDef_ISC_Spacemarine</adulthood>-->
 		<destroyInventory>true</destroyInventory>
-	</RMC.RankDef>
-	
-	<RMC.RankDef ParentName="RMC_RankDef_ISC_Spacemarine_Base">
-		<defName>RMC_RankDef_ISC_Private</defName>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef ParentName="SMercs_RankDef_ISC_Spacemarine_Base">
+		<defName>SMercs_RankDef_ISC_Private</defName>
 		<label>Private</label>
-		<pawnKindDef>RMC_PawnKindDef_ISC_Private</pawnKindDef>
+		<pawnKindDef>SMercs_PawnKindDef_ISC_Private</pawnKindDef>
 		<title>Pvt.</title>
-		<trainingDef>RMC_TrainingDef_ISC_Low</trainingDef>
-		<equipmentDef>RMC_EquipmentDef_ISC_LightArmor</equipmentDef>
+		<trainingDef>SMercs_TrainingDef_ISC_Low</trainingDef>
+		<equipmentDef>SMercs_EquipmentDef_ISC_LightArmor</equipmentDef>
 		<weapon>Gun_ChargeRifle</weapon>
 		<cost>1000</cost>
 		<spawnTime>60000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef ParentName="RMC_RankDef_ISC_Spacemarine_Base">
-		<defName>RMC_RankDef_ISC_Corporal</defName>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef ParentName="SMercs_RankDef_ISC_Spacemarine_Base">
+		<defName>SMercs_RankDef_ISC_Corporal</defName>
 		<label>Corporal</label>
-		<pawnKindDef>RMC_PawnKindDef_ISC_Corporal</pawnKindDef>
+		<pawnKindDef>SMercs_PawnKindDef_ISC_Corporal</pawnKindDef>
 		<title>Cpl.</title>
-		<trainingDef>RMC_TrainingDef_ISC_Medium</trainingDef>
-		<equipmentDef>RMC_EquipmentDef_ISC_LightArmor</equipmentDef>
+		<trainingDef>SMercs_TrainingDef_ISC_Medium</trainingDef>
+		<equipmentDef>SMercs_EquipmentDef_ISC_LightArmor</equipmentDef>
 		<weapon>Gun_ChargeRifle</weapon>
-    <cost>1500</cost>
+		<cost>1500</cost>
 		<spawnTime>60000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef ParentName="RMC_RankDef_ISC_Spacemarine_Base">
-		<defName>RMC_RankDef_ISC_Sergeant</defName>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef ParentName="SMercs_RankDef_ISC_Spacemarine_Base">
+		<defName>SMercs_RankDef_ISC_Sergeant</defName>
 		<label>Sergeant</label>
-		<pawnKindDef>RMC_PawnKindDef_ISC_Sergeant</pawnKindDef>
+		<pawnKindDef>SMercs_PawnKindDef_ISC_Sergeant</pawnKindDef>
 		<title>Sgt.</title>
-		<trainingDef>RMC_TrainingDef_ISC_High</trainingDef>
-		<equipmentDef>RMC_EquipmentDef_ISC_HeavyArmor</equipmentDef>
+		<trainingDef>SMercs_TrainingDef_ISC_High</trainingDef>
+		<equipmentDef>SMercs_EquipmentDef_ISC_HeavyArmor</equipmentDef>
 		<weapon>Gun_ChargeLance</weapon>
 		<cost>2000</cost>
 		<spawnTime>120000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef Abstract="True" Name="RMC_RankDef_ISC_Officer_Base">
-		<childhood>RMC_BackstoryDef_ISC_Cadet</childhood>
-		<adulthood>RMC_BackstoryDef_ISC_Officer</adulthood>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef Abstract="True" Name="SMercs_RankDef_ISC_Officer_Base">
+		<!--<childhood>SMercs_BackstoryDef_ISC_Cadet</childhood>
+		<adulthood>SMercs_BackstoryDef_ISC_Officer</adulthood>-->
 		<destroyInventory>true</destroyInventory>
-	</RMC.RankDef>
-	
-	<RMC.RankDef ParentName="RMC_RankDef_ISC_Officer_Base">
-		<defName>RMC_RankDef_ISC_Tech</defName>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef ParentName="SMercs_RankDef_ISC_Officer_Base">
+		<defName>SMercs_RankDef_ISC_Tech</defName>
 		<label>Technical Officer</label>
-		<pawnKindDef>RMC_PawnKindDef_ISC_Tech</pawnKindDef>
+		<pawnKindDef>SMercs_PawnKindDef_ISC_Tech</pawnKindDef>
 		<title>Tech.</title>
-		<adulthood>RMC_BackstoryDef_ISC_Tech</adulthood>
-		<trainingDef>RMC_TrainingDef_ISC_Tech</trainingDef>
-		<equipmentDef>RMC_EquipmentDef_ISC_LightArmor</equipmentDef>
+		<!--<adulthood>SMercs_BackstoryDef_ISC_Tech</adulthood>-->
+		<trainingDef>SMercs_TrainingDef_ISC_Tech</trainingDef>
+		<equipmentDef>SMercs_EquipmentDef_ISC_LightArmor</equipmentDef>
 		<weapon>Gun_ChargeRifle</weapon>
 		<cost>3000</cost>
 		<spawnTime>180000</spawnTime>
-	</RMC.RankDef>
+	</SimpleMercenaries.Core.RankDef>
 
-  <RMC.RankDef ParentName="RMC_RankDef_ISC_Officer_Base">
-    <defName>RMC_RankDef_ISC_Doc</defName>
-    <label>Medical Officer</label>
-    <pawnKindDef>RMC_PawnKindDef_ISC_Doc</pawnKindDef>
-    <title>Dr.</title>
-    <adulthood>RMC_BackstoryDef_ISC_Doc</adulthood>
-    <trainingDef>RMC_TrainingDef_ISC_Medical</trainingDef>
-    <equipmentDef>RMC_EquipmentDef_ISC_LightArmor</equipmentDef>
-    <weapon>Gun_ChargeRifle</weapon>
-    <cost>3000</cost>
-    <spawnTime>180000</spawnTime>
-  </RMC.RankDef>
-	
-	<RMC.RankDef ParentName="RMC_RankDef_ISC_Officer_Base">
-		<defName>RMC_RankDef_ISC_Lieutenant</defName>
+	<SimpleMercenaries.Core.RankDef ParentName="SMercs_RankDef_ISC_Officer_Base">
+		<defName>SMercs_RankDef_ISC_Doc</defName>
+		<label>Medical Officer</label>
+		<pawnKindDef>SMercs_PawnKindDef_ISC_Doc</pawnKindDef>
+		<title>Dr.</title>
+		<!--<adulthood>SMercs_BackstoryDef_ISC_Doc</adulthood>-->
+		<trainingDef>SMercs_TrainingDef_ISC_Medical</trainingDef>
+		<equipmentDef>SMercs_EquipmentDef_ISC_LightArmor</equipmentDef>
+		<weapon>Gun_ChargeRifle</weapon>
+		<cost>3000</cost>
+		<spawnTime>180000</spawnTime>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef ParentName="SMercs_RankDef_ISC_Officer_Base">
+		<defName>SMercs_RankDef_ISC_Lieutenant</defName>
 		<label>Lieutenant</label>
-		<pawnKindDef>RMC_PawnKindDef_ISC_Lieutenant</pawnKindDef>
+		<pawnKindDef>SMercs_PawnKindDef_ISC_Lieutenant</pawnKindDef>
 		<title>Lt.</title>
-		<trainingDef>RMC_TrainingDef_ISC_Officer</trainingDef>
-		<equipmentDef>RMC_EquipmentDef_ISC_HeavyArmor</equipmentDef>
+		<trainingDef>SMercs_TrainingDef_ISC_Officer</trainingDef>
+		<equipmentDef>SMercs_EquipmentDef_ISC_HeavyArmor</equipmentDef>
 		<weapon>Gun_ChargeLance</weapon>
 		<cost>3500</cost>
 		<spawnTime>180000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef ParentName="RMC_RankDef_ISC_Officer_Base">
-		<defName>RMC_RankDef_ISC_Captain</defName>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef ParentName="SMercs_RankDef_ISC_Officer_Base">
+		<defName>SMercs_RankDef_ISC_Captain</defName>
 		<label>Captain</label>
-		<pawnKindDef>RMC_PawnKindDef_ISC_Captain</pawnKindDef>
+		<pawnKindDef>SMercs_PawnKindDef_ISC_Captain</pawnKindDef>
 		<title>Capt.</title>
-		<trainingDef>RMC_TrainingDef_ISC_Officer</trainingDef>
-		<equipmentDef>RMC_EquipmentDef_ISC_HeavyArmor</equipmentDef>
+		<trainingDef>SMercs_TrainingDef_ISC_Officer</trainingDef>
+		<equipmentDef>SMercs_EquipmentDef_ISC_HeavyArmor</equipmentDef>
 		<weapon>Gun_ChargeLance</weapon>
 		<cost>4000</cost>
 		<spawnTime>180000</spawnTime>
-	</RMC.RankDef>
-	
+	</SimpleMercenaries.Core.RankDef>
+
 </Defs>

@@ -5,7 +5,7 @@ using System.Text;
 using RimWorld;
 using Verse;
 
-namespace RMC
+namespace SimpleMercenaries.Core
 {
     //Custom def for specify back stories because such a def does not exist in RimWorld Core
     public class BackstoryDef : Def

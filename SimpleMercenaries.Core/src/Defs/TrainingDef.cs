@@ -5,7 +5,7 @@ using System.Text;
 using RimWorld;
 using Verse;
 
-namespace RMC
+namespace SimpleMercenaries.Core
 {
     public class SkillRange
     {

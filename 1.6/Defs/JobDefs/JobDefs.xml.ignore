@@ -2,7 +2,7 @@
 <Defs>
 
   <JobDef>
-    <defName>RMC_JobDef_UseMilitaryCommsConsole</defName>
+    <defName>SMercs_JobDef_UseMilitaryCommsConsole</defName>
     <driverClass>RMC.JobDriver_UseMilitaryCommsConsole</driverClass>
     <reportString>using military comms console</reportString>
     <allowOpportunisticPrefix>true</allowOpportunisticPrefix>

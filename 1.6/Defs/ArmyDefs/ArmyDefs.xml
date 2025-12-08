@@ -1,44 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
-
-	<RMC.ArmyDef>
-		<defName>RMC_ArmyDef_ISC</defName>
+	<SimpleMercenaries.Core.ArmyDef>
+		<defName>SMercs_ArmyDef_ISC</defName>
 		<label>Imperial spacemarine corps</label>
-		<factionDef>RMC_FactionDef_ISC_Colony</factionDef>
+		<factionDef>SMercs_FactionDef_ISC_Colony</factionDef>
 		<useDropPods>true</useDropPods>
-		<startingUnit>RMC_UnitDef_ISC_Starting_Unit</startingUnit>
+		<startingUnit>SMercs_UnitDef_ISC_Starting_Unit</startingUnit>
 		<rankList>
-			<li>RMC_RankDef_ISC_Colonist</li>
-			<li>RMC_RankDef_ISC_Private</li>
-			<li>RMC_RankDef_ISC_Corporal</li>
-			<li>RMC_RankDef_ISC_Sergeant</li>
-			<li>RMC_RankDef_ISC_Tech</li>
-      <li>RMC_RankDef_ISC_Doc</li>
-      <li>RMC_RankDef_ISC_Lieutenant</li>
-			<li>RMC_RankDef_ISC_Captain</li>
-      <li>RMC_RankDef_RWM_Gunner</li>
-      <li>RMC_RankDef_RWM_Grenadier_Destructive</li>
-      <li>RMC_RankDef_RWM_Slasher</li>
-      <li>RMC_RankDef_RWM_Sniper</li>
-      <li>RMC_RankDef_RWM_Elite</li>
+			<li>SMercs_RankDef_ISC_Colonist</li>
+			<li>SMercs_RankDef_ISC_Private</li>
+			<li>SMercs_RankDef_ISC_Corporal</li>
+			<li>SMercs_RankDef_ISC_Sergeant</li>
+			<li>SMercs_RankDef_ISC_Tech</li>
+			<li>SMercs_RankDef_ISC_Doc</li>
+			<li>SMercs_RankDef_ISC_Lieutenant</li>
+			<li>SMercs_RankDef_ISC_Captain</li>
+			<li>SMercs_RankDef_RWM_Gunner</li>
+			<li>SMercs_RankDef_RWM_Grenadier_Destructive</li>
+			<li>SMercs_RankDef_RWM_Slasher</li>
+			<li>SMercs_RankDef_RWM_Sniper</li>
+			<li>SMercs_RankDef_RWM_Elite</li>
 		</rankList>
-	</RMC.ArmyDef>
-	
-	<RMC.ArmyDef>
-		<defName>RMC_ArmyDef_RWM</defName>
+	</SimpleMercenaries.Core.ArmyDef>
+	<SimpleMercenaries.Core.ArmyDef>
+		<defName>SMercs_ArmyDef_RWM</defName>
 		<label>Rimworld mercenary corps</label>
-		<factionDef>RMC_FactionDef_RWM_Colony</factionDef>
-    <startingUnit>RMC_UnitDef_RWM_Starting_Unit</startingUnit>
+		<factionDef>SMercs_FactionDef_RWM_Colony</factionDef>
+		<startingUnit>SMercs_UnitDef_RWM_Starting_Unit</startingUnit>
 		<useDropPods>false</useDropPods>
 		<rankList>
-			<li>RMC_RankDef_RWM_Scavenger</li>
-			<li>RMC_RankDef_RWM_Gunner</li>
-			<li>RMC_RankDef_RWM_Grenadier_Destructive</li>
-			<li>RMC_RankDef_RWM_Slasher</li>
-			<li>RMC_RankDef_RWM_Sniper</li>
-			<li>RMC_RankDef_RWM_Elite</li>
+			<li>SMercs_RankDef_RWM_Scavenger</li>
+			<li>SMercs_RankDef_RWM_Gunner</li>
+			<li>SMercs_RankDef_RWM_Grenadier_Destructive</li>
+			<li>SMercs_RankDef_RWM_Slasher</li>
+			<li>SMercs_RankDef_RWM_Sniper</li>
+			<li>SMercs_RankDef_RWM_Elite</li>
 		</rankList>
-	</RMC.ArmyDef>
-	
+	</SimpleMercenaries.Core.ArmyDef>
 </Defs>

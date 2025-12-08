@@ -2,7 +2,7 @@
 <Defs>
 
 	<IncidentDef>
-		<defName>RMC_IncidentDef_Deploy</defName>
+		<defName>SMercs_IncidentDef_Deploy</defName>
 		<label>deploy soldiers</label>
 		<category>AllyAssistance</category>
 		<targetTags>

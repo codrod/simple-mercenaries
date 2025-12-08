@@ -2,8 +2,8 @@
 
 <Defs>
 
-	<RMC.EquipmentDef>
-		<defName>RMC_EquipmentDef_ISC_LightClothing</defName>
+	<SimpleMercenaries.Core.EquipmentDef>
+		<defName>SMercs_EquipmentDef_ISC_LightClothing</defName>
 		<label>light clothing</label>
 		<equipmentList>
 			<li>
@@ -15,10 +15,10 @@
 				<stuff>Synthread</stuff>
 			</li>
 		</equipmentList>
-	</RMC.EquipmentDef>
-	
-	<RMC.EquipmentDef>
-		<defName>RMC_EquipmentDef_ISC_HeavyClothing</defName>
+	</SimpleMercenaries.Core.EquipmentDef>
+
+	<SimpleMercenaries.Core.EquipmentDef>
+		<defName>SMercs_EquipmentDef_ISC_HeavyClothing</defName>
 		<label>heavy clothing</label>
 		<equipmentList>
 			<li>
@@ -38,10 +38,10 @@
 				<stuff>Synthread</stuff>
 			</li>
 		</equipmentList>
-	</RMC.EquipmentDef>
-	
-	<RMC.EquipmentDef>
-		<defName>RMC_EquipmentDef_ISC_LightArmor</defName>
+	</SimpleMercenaries.Core.EquipmentDef>
+
+	<SimpleMercenaries.Core.EquipmentDef>
+		<defName>SMercs_EquipmentDef_ISC_LightArmor</defName>
 		<label>light armor</label>
 		<equipmentList>
 			<li>
@@ -54,17 +54,17 @@
 			</li>
 			<li>
 				<thing>Apparel_ArmorRecon</thing>
-        <color>(0.4, 0.4, 0.4, 1)</color>
+				<color>(0.4, 0.4, 0.4, 1)</color>
 			</li>
 			<li>
 				<thing>Apparel_ArmorHelmetRecon</thing>
-        <color>(0.4, 0.4, 0.4, 1)</color>
+				<color>(0.4, 0.4, 0.4, 1)</color>
 			</li>
 		</equipmentList>
-	</RMC.EquipmentDef>
-	
-	<RMC.EquipmentDef>
-		<defName>RMC_EquipmentDef_ISC_HeavyArmor</defName>
+	</SimpleMercenaries.Core.EquipmentDef>
+
+	<SimpleMercenaries.Core.EquipmentDef>
+		<defName>SMercs_EquipmentDef_ISC_HeavyArmor</defName>
 		<label>heavy armor</label>
 		<equipmentList>
 			<li>
@@ -77,13 +77,13 @@
 			</li>
 			<li>
 				<thing>Apparel_PowerArmor</thing>
-        <color>(0.4, 0.4, 0.4, 1)</color>
+				<color>(0.4, 0.4, 0.4, 1)</color>
 			</li>
 			<li>
 				<thing>Apparel_PowerArmorHelmet</thing>
-        <color>(0.4, 0.4, 0.4, 1)</color>
+				<color>(0.4, 0.4, 0.4, 1)</color>
 			</li>
 		</equipmentList>
-	</RMC.EquipmentDef>
-	
+	</SimpleMercenaries.Core.EquipmentDef>
+
 </Defs>

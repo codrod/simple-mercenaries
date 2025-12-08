@@ -2,42 +2,42 @@
 
 <Defs>
 
-	<RMC.UnitDef>
-		<defName>RMC_UnitDef_ISC_Starting_Unit</defName>
-		<label>Starting Unit</label>
-		<soldiers>
-      <li>
-        <key>RMC_RankDef_ISC_Captain</key>
-        <value>1</value>
-      </li>
-			<li>
-				<key>RMC_RankDef_ISC_Sergeant</key>
-				<value>1</value>
-			</li>
-			<li>
-				<key>RMC_RankDef_ISC_Corporal</key>
-				<value>1</value>
-			</li>
-			<li>
-				<key>RMC_RankDef_ISC_Private</key>
-				<value>2</value>
-			</li>
-		</soldiers>
-	</RMC.UnitDef>
-
-  <RMC.UnitDef>
-    <defName>RMC_UnitDef_RWM_Starting_Unit</defName>
-    <label>Small</label>
+  <SimpleMercenaries.Core.UnitDef>
+    <defName>SMercs_UnitDef_ISC_Starting_Unit</defName>
+    <label>Starting Unit</label>
     <soldiers>
       <li>
-        <key>RMC_RankDef_RWM_Elite</key>
+        <key>SMercs_RankDef_ISC_Captain</key>
         <value>1</value>
       </li>
       <li>
-        <key>RMC_RankDef_RWM_Gunner</key>
+        <key>SMercs_RankDef_ISC_Sergeant</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>SMercs_RankDef_ISC_Corporal</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>SMercs_RankDef_ISC_Private</key>
         <value>2</value>
       </li>
     </soldiers>
-  </RMC.UnitDef>
-	
+  </SimpleMercenaries.Core.UnitDef>
+
+  <SimpleMercenaries.Core.UnitDef>
+    <defName>SMercs_UnitDef_RWM_Starting_Unit</defName>
+    <label>Small</label>
+    <soldiers>
+      <li>
+        <key>SMercs_RankDef_RWM_Elite</key>
+        <value>1</value>
+      </li>
+      <li>
+        <key>SMercs_RankDef_RWM_Gunner</key>
+        <value>2</value>
+      </li>
+    </soldiers>
+  </SimpleMercenaries.Core.UnitDef>
+
 </Defs>

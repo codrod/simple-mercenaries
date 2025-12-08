@@ -7,7 +7,7 @@ using Verse;
 using Verse.Sound;
 using UnityEngine;
 
-namespace RMC
+namespace SimpleMercenaries.Core
 {
     public class Dialog_Recruit : Window
     {
@@ -190,7 +190,7 @@ namespace RMC
                 incidentParms.forced = true;
                 incidentParms.reinforcements = UnitDef.CreateUnitFromArrays(ranks, counts);
 
-                Find.Storyteller.incidentQueue.Add(DefDatabase<IncidentDef>.GetNamed("RMC_IncidentDef_Deploy"), Find.TickManager.TicksGame + GetUnitSpawnTime(), incidentParms, 240000);
+                Find.Storyteller.incidentQueue.Add(DefDatabase<IncidentDef>.GetNamed("SMercs_IncidentDef_Deploy"), Find.TickManager.TicksGame + GetUnitSpawnTime(), incidentParms, 240000);
 
                 this.Close(true);
             };

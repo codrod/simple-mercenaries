@@ -1,19 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<FactionDef Abstract="True" Name="RMC_FactionDef_ISC_Colony_Base">
+  <FactionDef Abstract="True" Name="SMercs_FactionDef_ISC_Colony_Base">
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
-		<colorSpectrum>
-			<li>(0, 0.737, 0.847)</li>
-		</colorSpectrum>
-	</FactionDef>
-  
-	<FactionDef ParentName="RMC_FactionDef_ISC_Colony_Base">
-		<defName>RMC_FactionDef_ISC_Colony</defName>
+    <colorSpectrum>
+      <li>(0, 0.737, 0.847)</li>
+    </colorSpectrum>
+  </FactionDef>
+
+  <FactionDef ParentName="SMercs_FactionDef_ISC_Colony_Base">
+    <defName>SMercs_FactionDef_ISC_Colony</defName>
     <label>Spacemarines</label>
     <description>A colony of recently-arrived imperial spacemarines.</description>
     <isPlayer>true</isPlayer>
-    <basicMemberKind>RMC_PawnKindDef_ISC_Colonist</basicMemberKind>
+    <basicMemberKind>SMercs_PawnKindDef_ISC_Colonist</basicMemberKind>
     <pawnSingular>spacemarine</pawnSingular>
     <pawnsPlural>spacemarines</pawnsPlural>
     <techLevel>Spacer</techLevel>
@@ -44,6 +44,6 @@
         <li>Synthread</li>
       </thingDefs>
     </apparelStuffFilter>
-	</FactionDef>
+  </FactionDef>
 
 </Defs>

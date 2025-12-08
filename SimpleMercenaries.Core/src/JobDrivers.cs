@@ -7,7 +7,7 @@ using RimWorld.Planet;
 using Verse;
 using Verse.AI;
 
-namespace RMC
+namespace SimpleMercenaries.Core
 {
     public class JobDriver_UseMilitaryCommsConsole : RimWorld.JobDriver_UseCommsConsole
     {

@@ -1,19 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
 
-	<PawnKindDef Abstract="True" Name="RMC_PawnKindDef_ISC_Base">
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_ISC_Base">
 		<race>Human</race>
 		<isFighter>true</isFighter>
 		<combatPower>100</combatPower>
 		<forceNormalGearQuality>true</forceNormalGearQuality>
-		<defaultFactionType>RMC_FactionDef_ISC_Colony</defaultFactionType>
+		<defaultFactionType>SMercs_FactionDef_ISC_Colony</defaultFactionType>
 		<minGenerationAge>18</minGenerationAge>
 		<maxGenerationAge>55</maxGenerationAge>
 	</PawnKindDef>
-	
-	<PawnKindDef ParentName="RMC_PawnKindDef_ISC_Base">
-		<defName>RMC_PawnKindDef_ISC_Colonist</defName>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_ISC_Base">
+		<defName>SMercs_PawnKindDef_ISC_Colonist</defName>
 		<label>colonist</label>
 		<apparelTags>
 			<li>IndustrialBasic</li>
@@ -34,51 +34,53 @@
 			<li>Simple</li>
 		</techHediffsTags>
 	</PawnKindDef>
-  
-	<PawnKindDef Abstract="True" Name="RMC_PawnKindDef_ISC_Spacemarine" ParentName="RMC_PawnKindDef_ISC_Base">
+
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_ISC_Spacemarine"
+		ParentName="SMercs_PawnKindDef_ISC_Base">
 		<minGenerationAge>18</minGenerationAge>
 		<maxGenerationAge>40</maxGenerationAge>
 		<combatPower>125</combatPower>
 	</PawnKindDef>
-	
-	<PawnKindDef ParentName="RMC_PawnKindDef_ISC_Spacemarine">
-		<defName>RMC_PawnKindDef_ISC_Private</defName>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_ISC_Spacemarine">
+		<defName>SMercs_PawnKindDef_ISC_Private</defName>
 		<label>private</label>
 	</PawnKindDef>
-	
-	<PawnKindDef ParentName="RMC_PawnKindDef_ISC_Spacemarine">
-		<defName>RMC_PawnKindDef_ISC_Corporal</defName>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_ISC_Spacemarine">
+		<defName>SMercs_PawnKindDef_ISC_Corporal</defName>
 		<label>corporal</label>
 	</PawnKindDef>
-	
-	<PawnKindDef ParentName="RMC_PawnKindDef_ISC_Spacemarine">
-		<defName>RMC_PawnKindDef_ISC_Sergeant</defName>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_ISC_Spacemarine">
+		<defName>SMercs_PawnKindDef_ISC_Sergeant</defName>
 		<label>sergeant</label>
 	</PawnKindDef>
-	
-	<PawnKindDef Abstract="True" Name="RMC_PawnKindDef_ISC_Officer" ParentName="RMC_PawnKindDef_ISC_Base">
+
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_ISC_Officer"
+		ParentName="SMercs_PawnKindDef_ISC_Base">
 		<minGenerationAge>22</minGenerationAge>
 		<maxGenerationAge>50</maxGenerationAge>
 	</PawnKindDef>
-	
-	<PawnKindDef ParentName="RMC_PawnKindDef_ISC_Officer">
-		<defName>RMC_PawnKindDef_ISC_Tech</defName>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_ISC_Officer">
+		<defName>SMercs_PawnKindDef_ISC_Tech</defName>
 		<label>technical officer</label>
 	</PawnKindDef>
 
-  <PawnKindDef ParentName="RMC_PawnKindDef_ISC_Officer">
-    <defName>RMC_PawnKindDef_ISC_Doc</defName>
-    <label>medical officer</label>
-  </PawnKindDef>
-	
-	<PawnKindDef ParentName="RMC_PawnKindDef_ISC_Officer">
-		<defName>RMC_PawnKindDef_ISC_Lieutenant</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_ISC_Officer">
+		<defName>SMercs_PawnKindDef_ISC_Doc</defName>
+		<label>medical officer</label>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_ISC_Officer">
+		<defName>SMercs_PawnKindDef_ISC_Lieutenant</defName>
 		<label>lieutenant</label>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="RMC_PawnKindDef_ISC_Officer">
-		<defName>RMC_PawnKindDef_ISC_Captain</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_ISC_Officer">
+		<defName>SMercs_PawnKindDef_ISC_Captain</defName>
 		<label>captain</label>
 	</PawnKindDef>
-	
+
 </Defs>

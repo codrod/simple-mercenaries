@@ -6,7 +6,7 @@ using RimWorld;
 using Verse;
 using UnityEngine;
 
-namespace RMC
+namespace SimpleMercenaries.Core
 {
     public class EquipmentDef : Def
     {

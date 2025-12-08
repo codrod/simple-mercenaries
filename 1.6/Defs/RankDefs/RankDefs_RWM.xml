@@ -2,63 +2,63 @@
 
 <Defs>
 
-	<RMC.RankDef>
-		<defName>RMC_RankDef_RWM_Scavenger</defName>
+	<SimpleMercenaries.Core.RankDef>
+		<defName>SMercs_RankDef_RWM_Scavenger</defName>
 		<label>Mercenary scavenger</label>
-		<pawnKindDef>RMC_PawnKindDef_RWM_Scavenger</pawnKindDef>
-    <cost>500</cost>
-    <spawnTime>60000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef>
-		<defName>RMC_RankDef_RWM_Gunner</defName>
+		<pawnKindDef>SMercs_PawnKindDef_RWM_Scavenger</pawnKindDef>
+		<cost>500</cost>
+		<spawnTime>60000</spawnTime>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef>
+		<defName>SMercs_RankDef_RWM_Gunner</defName>
 		<label>Mercenary gunner</label>
-		<pawnKindDef>RMC_PawnKindDef_RWM_Gunner</pawnKindDef>
-    <trainingDef>RMC_TrainingDef_RWM_Low</trainingDef>
-    <adulthood>RMC_BackstoryDef_RWM_Mercenary</adulthood>
-    <cost>1500</cost>
-    <spawnTime>60000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef>
-		<defName>RMC_RankDef_RWM_Grenadier_Destructive</defName>
+		<pawnKindDef>SMercs_PawnKindDef_RWM_Gunner</pawnKindDef>
+		<trainingDef>SMercs_TrainingDef_RWM_Low</trainingDef>
+		<!--<adulthood>SMercs_BackstoryDef_RWM_Mercenary</adulthood>-->
+		<cost>1500</cost>
+		<spawnTime>60000</spawnTime>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef>
+		<defName>SMercs_RankDef_RWM_Grenadier_Destructive</defName>
 		<label>Mercenary grenadier</label>
-		<pawnKindDef>RMC_PawnKindDef_RWM_Grenadier_Destructive</pawnKindDef>
-    <trainingDef>RMC_TrainingDef_RWM_Low</trainingDef>
-    <adulthood>RMC_BackstoryDef_RWM_Mercenary</adulthood>
-    <cost>2500</cost>
-    <spawnTime>60000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef>
-		<defName>RMC_RankDef_RWM_Slasher</defName>
+		<pawnKindDef>SMercs_PawnKindDef_RWM_Grenadier_Destructive</pawnKindDef>
+		<trainingDef>SMercs_TrainingDef_RWM_Low</trainingDef>
+		<!--<adulthood>SMercs_BackstoryDef_RWM_Mercenary</adulthood>-->
+		<cost>2500</cost>
+		<spawnTime>60000</spawnTime>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef>
+		<defName>SMercs_RankDef_RWM_Slasher</defName>
 		<label>Mercenary slasher</label>
-		<pawnKindDef>RMC_PawnKindDef_RWM_Slasher</pawnKindDef>
-    <trainingDef>RMC_TrainingDef_RWM_Melee</trainingDef>
-    <adulthood>RMC_BackstoryDef_RWM_Mercenary</adulthood>
-    <cost>1500</cost>
-    <spawnTime>60000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef>
-		<defName>RMC_RankDef_RWM_Sniper</defName>
+		<pawnKindDef>SMercs_PawnKindDef_RWM_Slasher</pawnKindDef>
+		<trainingDef>SMercs_TrainingDef_RWM_Melee</trainingDef>
+		<!--<adulthood>SMercs_BackstoryDef_RWM_Mercenary</adulthood>-->
+		<cost>1500</cost>
+		<spawnTime>60000</spawnTime>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef>
+		<defName>SMercs_RankDef_RWM_Sniper</defName>
 		<label>Mercenary sniper</label>
-		<pawnKindDef>RMC_PawnKindDef_RWM_Sniper</pawnKindDef>
-    <trainingDef>RMC_TrainingDef_RWM_Medium</trainingDef>
-    <adulthood>RMC_BackstoryDef_RWM_Mercenary</adulthood>
-    <cost>5000</cost>
-    <spawnTime>120000</spawnTime>
-	</RMC.RankDef>
-	
-	<RMC.RankDef>
-		<defName>RMC_RankDef_RWM_Elite</defName>
+		<pawnKindDef>SMercs_PawnKindDef_RWM_Sniper</pawnKindDef>
+		<trainingDef>SMercs_TrainingDef_RWM_Medium</trainingDef>
+		<!--<adulthood>SMercs_BackstoryDef_RWM_Mercenary</adulthood>-->
+		<cost>5000</cost>
+		<spawnTime>120000</spawnTime>
+	</SimpleMercenaries.Core.RankDef>
+
+	<SimpleMercenaries.Core.RankDef>
+		<defName>SMercs_RankDef_RWM_Elite</defName>
 		<label>Mercenary captain</label>
-    <title>Capt.</title>
-		<pawnKindDef>RMC_PawnKindDef_RWM_Elite</pawnKindDef>
-    <trainingDef>RMC_TrainingDef_RWM_High</trainingDef>
-    <adulthood>RMC_BackstoryDef_RWM_Mercenary_Captain</adulthood>
-    <cost>10000</cost>
-    <spawnTime>240000</spawnTime>
-	</RMC.RankDef>
-	
+		<title>Capt.</title>
+		<pawnKindDef>SMercs_PawnKindDef_RWM_Elite</pawnKindDef>
+		<trainingDef>SMercs_TrainingDef_RWM_High</trainingDef>
+		<!--<adulthood>SMercs_BackstoryDef_RWM_Mercenary_Captain</adulthood>-->
+		<cost>10000</cost>
+		<spawnTime>240000</spawnTime>
+	</SimpleMercenaries.Core.RankDef>
+
 </Defs>

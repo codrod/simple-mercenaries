@@ -2,7 +2,7 @@
 
 <Defs>
 
-	<RMC.BackstoryDef Abstract="True" Name="RMC_BackstoryDef_RWM_Base">
+	<RMC.BackstoryDef Abstract="True" Name="SMercs_BackstoryDef_RWM_Base">
     <isNewBackstory>true</isNewBackstory>
 		<bodyTypeDef>Hulk</bodyTypeDef>
 		<disallowedTraits>
@@ -13,19 +13,19 @@
 		</disallowedTraits>
 	</RMC.BackstoryDef>
 	
-	<RMC.BackstoryDef ParentName="RMC_BackstoryDef_RWM_Base">
-		<defName>RMC_BackstoryDef_RWM_Mercenary</defName>
+	<RMC.BackstoryDef ParentName="SMercs_BackstoryDef_RWM_Base">
+		<defName>SMercs_BackstoryDef_RWM_Mercenary</defName>
 		<label>mercenary backstory</label>
-		<identifier>RMC_BackstoryDef_RWM_Mercenary</identifier>
+		<identifier>SMercs_BackstoryDef_RWM_Mercenary</identifier>
 		<baseDesc>[PAWN_nameDef] ended up joining a band of rimworld mercenaries for reasons [PAWN_pronoun] does not like to talk about.\n\n[PAWN_pronoun] has managed to survive long enough to develop a modest amount of skill and a fairly dubious moral character.</baseDesc>
 		<title>Mercenary</title>
 		<titleShort>Merc</titleShort>
 	</RMC.BackstoryDef>
 
-  <RMC.BackstoryDef ParentName="RMC_BackstoryDef_RWM_Base">
-    <defName>RMC_BackstoryDef_RWM_Mercenary_Captain</defName>
+  <RMC.BackstoryDef ParentName="SMercs_BackstoryDef_RWM_Base">
+    <defName>SMercs_BackstoryDef_RWM_Mercenary_Captain</defName>
     <label>mercenary backstory</label>
-    <identifier>RMC_BackstoryDef_RWM_Mercenary_Captain</identifier>
+    <identifier>SMercs_BackstoryDef_RWM_Mercenary_Captain</identifier>
     <baseDesc>[PAWN_nameDef] was recruited by a band of mercenaries as a young adult.\n\n[PAWN_pronoun] excelled at mercenary work and quickly gained enough respect to use the title captain.\n\n[PAWN_nameDef] is as well known for [PAWN_possessive] combat skills as [PAWN_possessive] ruthlessness.</baseDesc>
     <title>Mercenary captain</title>
     <titleShort>Merc captain</titleShort>

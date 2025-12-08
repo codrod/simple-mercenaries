@@ -3,7 +3,7 @@
 <Defs>
 
 	<ThingDef ParentName="BuildingBase">
-		<defName>RMC_ThingDef_MilitaryCommsConsole</defName>
+		<defName>SMercs_ThingDef_MilitaryCommsConsole</defName>
 		<label>military comms console</label>
 		<description>Allows the request of reinforcments.</description>
 		<thingClass>RMC.Building_MilitaryCommsConsole</thingClass>

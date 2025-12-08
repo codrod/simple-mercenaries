@@ -26,7 +26,7 @@ using HarmonyLib;
  * prevent that from happening.
  */
 
-namespace RMC
+namespace SimpleMercenaries.Core
 {
     [StaticConstructorOnStartup]
     class Main
