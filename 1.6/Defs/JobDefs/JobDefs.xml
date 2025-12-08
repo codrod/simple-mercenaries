@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>RMC_JobDef_UseMilitaryCommsConsole</defName>
+    <driverClass>RMC.JobDriver_UseMilitaryCommsConsole</driverClass>
+    <reportString>using military comms console</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+
+</Defs>

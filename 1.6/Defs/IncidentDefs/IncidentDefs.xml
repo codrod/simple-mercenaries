@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<IncidentDef>
+		<defName>RMC_IncidentDef_Deploy</defName>
+		<label>deploy soldiers</label>
+		<category>AllyAssistance</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>RMC.IncidentWorker_Deploy</workerClass>
+		<baseChance>0.5</baseChance>
+		<populationEffect>None</populationEffect>
+		<minRefireDays>30</minRefireDays>
+		<letterLabel>Reinforcements</letterLabel>
+		<letterText>The reinforcements you requested have arrived.</letterText>
+	</IncidentDef>
+	
+</Defs>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+  <RMC.TrainingDef>
+    <defName>RMC_TrainingDef_RWM_Melee</defName>
+    <label>melee training</label>
+    <skillRangeList>
+      <li>
+        <skillDef>Melee</skillDef>
+        <min>8</min>
+        <max>12</max>
+        <passion>Major</passion>
+      </li>
+    </skillRangeList>
+  </RMC.TrainingDef>
+  
+	<RMC.TrainingDef>
+		<defName>RMC_TrainingDef_RWM_Low</defName>
+		<label>low training</label>
+		<skillRangeList>
+			<li>
+				<skillDef>Shooting</skillDef>
+        <bonus>4</bonus>
+			</li>
+		</skillRangeList>
+	</RMC.TrainingDef>
+	
+	<RMC.TrainingDef>
+		<defName>RMC_TrainingDef_RWM_Medium</defName>
+		<label>medium training</label>
+		<skillRangeList>
+			<li>
+				<skillDef>Shooting</skillDef>
+				<min>9</min>
+				<max>13</max>
+				<passion>Major</passion>
+			</li>
+		</skillRangeList>
+	</RMC.TrainingDef>
+	
+	<RMC.TrainingDef>
+		<defName>RMC_TrainingDef_RWM_High</defName>
+		<label>high training</label>
+		<skillRangeList>
+			<li>
+				<skillDef>Shooting</skillDef>
+				<min>11</min>
+				<max>15</max>
+				<passion>Major</passion>
+			</li>
+			<li>
+				<skillDef>Melee</skillDef>
+				<min>9</min>
+				<max>13</max>
+				<passion>Minor</passion>
+			</li>
+		</skillRangeList>
+	</RMC.TrainingDef>
+	
+</Defs>
