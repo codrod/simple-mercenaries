@@ -1,36 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-  <FactionDef Abstract="True" Name="SMercs_FactionDef_RWM_Colony_Base">
-    <colorSpectrum>
-      <li>(0, 0.737, 0.847)</li>
-    </colorSpectrum>
-  </FactionDef>
-
-  <FactionDef ParentName="SMercs_FactionDef_RWM_Colony_Base">
+  <FactionDef ParentName="FactionBase">
     <defName>SMercs_FactionDef_RWM_Colony</defName>
-    <label>Mercenaries</label>
-    <description>A colony of recently-arrived mercenaires.</description>
-    <isPlayer>true</isPlayer>
-    <basicMemberKind>SMercs_PawnKindDef_RWM_Scavenger</basicMemberKind>
-    <pawnSingular>mercenary</pawnSingular>
-    <pawnsPlural>mercenaires</pawnsPlural>
+    <label>mercs</label>
+    <description>testing...</description>
+    <pawnSingular>merc</pawnSingular>
+    <pawnsPlural>mercs</pawnsPlural>
+
+    <listOrderPriority>10</listOrderPriority>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <canGenerateQuestSites>false</canGenerateQuestSites>
+    <hidden>false</hidden>
+
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <permanentEnemy>false</permanentEnemy>
+
+    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+    <configurationListOrderPriority>60</configurationListOrderPriority>
+
+    <leaderTitle>boss</leaderTitle>
     <factionIconPath>World/WorldObjects/Expanding/PirateOutpost</factionIconPath>
-    <colorSpectrum>
-      <li>(0.45, 0.05, 0.05)</li>
-      <li>(0.80, 0.25, 0.05)</li>
-    </colorSpectrum>
-    <playerInitialSettlementNameMaker>NamerInitialSettlementColony</playerInitialSettlementNameMaker>
     <factionNameMaker>NamerFactionPirate</factionNameMaker>
     <settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
-    <techLevel>Industrial</techLevel>
-    <startingResearchTags>
-      <li>ClassicStart</li>
-    </startingResearchTags>
-    <startingTechprintsResearchTags>
-      <li>ClassicStart</li>
-      <li>ClassicStartTechprints</li>
-    </startingTechprintsResearchTags>
+    <colorSpectrum>
+      <li>(0.78, 0, 0.27)</li>
+      <li>(1, 0.74, 0.83)</li>
+    </colorSpectrum>
+    <techLevel>Spacer</techLevel>
+    <allowedCultures><li>Kriminul</li></allowedCultures>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Raider</li>
+    </requiredMemes>
+    <allowedMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">PainIsVirtue</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">FleshPurity</li>
+    </allowedMemes>
+    <structureMemeWeights>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+    </structureMemeWeights>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0.1</Dirtmole>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.05</Hussar>
+        <Waster MayRequire="Ludeon.RimWorld.Biotech">0.025</Waster>
+        <Pigskin MayRequire="Ludeon.RimWorld.Biotech">0.025</Pigskin>
+        <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0.025</Neanderthal>
+        <Impid MayRequire="Ludeon.RimWorld.Biotech">0.025</Impid>
+        <Genie MayRequire="Ludeon.RimWorld.Biotech">0.025</Genie>
+        <Yttakin MayRequire="Ludeon.RimWorld.Biotech">0.025</Yttakin>
+        <Starjack MayRequire="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Odyssey">0.025</Starjack>
+      </xenotypeChances>
+    </xenotypeSet>
     <backstoryFilters>
       <li>
         <categories>
@@ -38,11 +63,124 @@
         </categories>
       </li>
     </backstoryFilters>
-    <geneticVariance>0.8</geneticVariance>
-    <hairTags>
-      <li>Punk</li>
-    </hairTags>
-    <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <raidsForbidden>true</raidsForbidden>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <!-- Normal fights, ranged with melee mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <Drifter>10</Drifter>
+          <Thrasher>3</Thrasher>
+          <Scavenger>10</Scavenger>
+          <Pirate>10</Pirate>
+          <Grenadier_EMP>0.25</Grenadier_EMP>
+          <Grenadier_Smoke>0.25</Grenadier_Smoke>
+          <Grenadier_Destructive>2</Grenadier_Destructive>
+          <Mercenary_Gunner>10</Mercenary_Gunner>
+          <Mercenary_Heavy>6</Mercenary_Heavy>
+          <Mercenary_Slasher>3</Mercenary_Slasher>
+          <Mercenary_Sniper>7</Mercenary_Sniper>
+          <Mercenary_Elite>10</Mercenary_Elite>
+          <PirateBoss>5</PirateBoss>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, melee-only -->
+        <kindDef>Combat</kindDef>
+        <commonality>30</commonality>
+        <disallowedStrategies>
+          <li>Siege</li>
+        </disallowedStrategies>
+        <options>
+          <Thrasher>10</Thrasher>
+          <Mercenary_Slasher>10</Mercenary_Slasher>
+          <PirateBoss>5</PirateBoss>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, ranged only -->
+        <kindDef>Combat</kindDef>
+        <commonality>20</commonality>
+        <options>
+          <Scavenger>10</Scavenger>
+          <Pirate>10</Pirate>
+          <Grenadier_EMP>0.25</Grenadier_EMP>
+          <Grenadier_Smoke>0.25</Grenadier_Smoke>
+          <Grenadier_Destructive>2</Grenadier_Destructive>
+          <Mercenary_Gunner>10</Mercenary_Gunner>
+          <Mercenary_Heavy>6</Mercenary_Heavy>
+          <Mercenary_Sniper>7</Mercenary_Sniper>
+          <Mercenary_Elite>10</Mercenary_Elite>
+          <PirateBoss>5</PirateBoss>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, explosives with ranged mix-ins -->
+        <kindDef>Combat</kindDef>
+        <commonality>15</commonality>
+        <disallowedStrategies>
+          <li>Siege</li>
+        </disallowedStrategies>
+        <options>
+          <Grenadier_EMP>0.5</Grenadier_EMP>
+          <Grenadier_Smoke>0.5</Grenadier_Smoke>
+          <Grenadier_Destructive>10</Grenadier_Destructive>
+          <Mercenary_Gunner>1</Mercenary_Gunner>
+          <Mercenary_Heavy>10</Mercenary_Heavy>
+          <Mercenary_Elite>1</Mercenary_Elite>
+          <PirateBoss>1</PirateBoss>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, snipers only -->
+        <kindDef>Combat</kindDef>
+        <commonality>10</commonality>
+        <options>
+          <Mercenary_Sniper>10</Mercenary_Sniper>
+        </options>
+      </li>
+      <li>
+        <!-- Normal fights, drifters only (very rare) -->
+        <kindDef>Combat</kindDef>
+        <commonality>2.5</commonality>
+        <maxTotalPoints>1000</maxTotalPoints>
+        <options>
+          <Drifter>10</Drifter>
+        </options>
+      </li>
+      <li>
+        <!-- Base defense, mainly ranged with melee mix-ins -->
+        <kindDef>Settlement</kindDef>
+        <options>
+          <Thrasher>3</Thrasher>
+          <Pirate>10</Pirate>
+          <Grenadier_Destructive>2</Grenadier_Destructive>
+          <Mercenary_Slasher>3</Mercenary_Slasher>
+          <Mercenary_Sniper>10</Mercenary_Sniper>
+          <Mercenary_Gunner>10</Mercenary_Gunner>
+          <Mercenary_Elite>10</Mercenary_Elite>
+          <PirateBoss>10</PirateBoss>
+        </options>
+      </li>
+    </pawnGroupMakers>
   </FactionDef>
 
 </Defs>

@@ -3,99 +3,48 @@
 
 	<PawnKindDef Name="SMercs_PawnKindDef_RWM_Base" Abstract="True">
 		<race>Human</race>
-		<defaultFactionType>SMercs_FactionDef_RWM_Colony</defaultFactionType>
-		<isFighter>true</isFighter>
-		<combatPower>100</combatPower>
-		<chemicalAddictionChance>0.15</chemicalAddictionChance>
+		<defaultFactionDef>SMercs_FactionDef_RWM_Colony</defaultFactionDef>
+		<chemicalAddictionChance>0.1</chemicalAddictionChance>
 		<invNutrition>2.55</invNutrition>
+		<itemQuality>Normal</itemQuality>
 		<backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
+		<maxGenerationAge>65</maxGenerationAge>
 		<combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
-		<combatEnhancingDrugsCount>
-			<min>0</min>
-			<max>2</max>
-		</combatEnhancingDrugsCount>
-		<minGenerationAge>18</minGenerationAge>
-		<maxGenerationAge>45</maxGenerationAge>
-	</PawnKindDef>
-
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Base">
-		<defName>SMercs_PawnKindDef_RWM_Scavenger</defName>
-		<label>scavenger</label>
-		<combatPower>65</combatPower>
-		<chemicalAddictionChance>0.06</chemicalAddictionChance>
-		<weaponTags>
-			<li>SMercs_WeaponTag_Simple_Gun</li>
-		</weaponTags>
-		<weaponMoney>
-			<min>200</min>
-			<max>330</max>
-		</weaponMoney>
-		<apparelTags>
-			<li>IndustrialBasic</li>
-			<li>IndustrialAdvanced</li>
-		</apparelTags>
-		<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
-		<apparelMoney>
-			<min>350</min>
-			<max>600</max>
-		</apparelMoney>
-		<backstoryCryptosleepCommonality>1</backstoryCryptosleepCommonality>
-		<techHediffsChance>0.03</techHediffsChance>
-		<techHediffsMoney>
-			<min>50</min>
-			<max>800</max>
-		</techHediffsMoney>
-		<techHediffsTags>
-			<li>Poor</li>
-			<li>Simple</li>
-		</techHediffsTags>
+		<combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
+		<biocodeWeaponChance>0.1</biocodeWeaponChance>
 	</PawnKindDef>
 
 	<!-- Low merc tier - grenadiers -->
 
-	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_RWM_Grenadier_Base"
-		ParentName="SMercs_PawnKindDef_RWM_Base">
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_RWM_Grenadier_Base" ParentName="SMercs_PawnKindDef_RWM_Base">
 		<race>Human</race>
-		<combatPower>100</combatPower>
-		<gearHealthRange>
-			<min>0.7</min>
-			<max>2.3</max>
-		</gearHealthRange>
+		<gearHealthRange>0.7~2.3</gearHealthRange>
+		<initialWillRange>1~3</initialWillRange>
 		<apparelTags>
 			<li>IndustrialBasic</li>
 			<li>IndustrialAdvanced</li>
 			<li>IndustrialMilitaryBasic</li>
+			<li>BeltDefensePop</li>
 		</apparelTags>
-		<apparelMoney>
-			<min>1000</min>
-			<max>1500</max>
-		</apparelMoney>
+		<apparelMoney>400~700</apparelMoney>
 		<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+		<weaponMoney>500~500</weaponMoney>
 		<techHediffsChance>0.05</techHediffsChance>
-		<techHediffsMoney>
-			<min>500</min>
-			<max>500</max>
-		</techHediffsMoney>
+		<techHediffsMoney>500~500</techHediffsMoney>
 		<techHediffsTags>
 			<li>Poor</li>
 			<li>Simple</li>
+			<li>ImplantEmpireCommon</li>
 		</techHediffsTags>
+		<disallowedTraits>
+			<li>Brawler</li>
+		</disallowedTraits>
 		<inventoryOptions>
-			<skipChance>0.9</skipChance>
+			<skipChance>0.95</skipChance>
 			<subOptionsChooseOne>
 				<li>
-					<thingDef>Silver</thingDef>
-					<countRange>
-						<min>50</min>
-						<max>200</max>
-					</countRange>
-				</li>
-				<li>
 					<thingDef>MedicineIndustrial</thingDef>
-					<countRange>
-						<min>1</min>
-						<max>1</max>
-					</countRange>
+					<countRange>1</countRange>
 				</li>
 			</subOptionsChooseOne>
 		</inventoryOptions>
@@ -104,39 +53,33 @@
 	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Grenadier_Base">
 		<defName>SMercs_PawnKindDef_RWM_Grenadier_Destructive</defName>
 		<label>grenadier</label>
+		<combatPower>70</combatPower>
 		<canBeSapper>true</canBeSapper>
+		<isGoodBreacher>true</isGoodBreacher>
 		<weaponTags>
 			<li>GrenadeDestructive</li>
 		</weaponTags>
-		<weaponMoney>
-			<min>245</min>
-			<max>300</max>
-		</weaponMoney>
+		<initialResistanceRange>10~16</initialResistanceRange>
 	</PawnKindDef>
 
 	<!-- Mid merc tier - gunner, slasher, sniper, heavy -->
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Base" Name="SMercs_PawnKindDef_RWM_MidTier_Base"
-		Abstract="True">
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Base" Name="SMercs_PawnKindDef_RWM_MidTier_Base" Abstract="True">
 		<techHediffsChance>0.15</techHediffsChance>
-		<techHediffsMoney>
-			<min>700</min>
-			<max>1200</max>
-		</techHediffsMoney>
+		<techHediffsMoney>700~1200</techHediffsMoney>
 		<techHediffsTags>
 			<li>Simple</li>
 			<li>Advanced</li>
+			<li>ImplantEmpireCommon</li>
 		</techHediffsTags>
+		<biocodeWeaponChance>0.2</biocodeWeaponChance>
+		<initialWillRange>2~4</initialWillRange>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base">
-		<defName>SMercs_PawnKindDef_RWM_Gunner</defName>
-		<label>gunner</label>
-		<combatPower>90</combatPower>
-		<gearHealthRange>
-			<min>0.7</min>
-			<max>3.2</max>
-		</gearHealthRange>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base" Name="SMercs_PawnKindDef_RWM_Gunner_Base" Abstract="True">
+		<label>mercenary gunner</label>
+		<combatPower>85</combatPower>
+		<gearHealthRange>0.7~3.2</gearHealthRange>
 		<apparelTags>
 			<li>IndustrialBasic</li>
 			<li>IndustrialAdvanced</li>
@@ -144,152 +87,108 @@
 			<li>IndustrialMilitaryAdvanced</li>
 			<li>BeltDefensePop</li>
 		</apparelTags>
-		<apparelMoney>
-			<min>1000</min>
-			<max>1500</max>
-		</apparelMoney>
+		<apparelMoney>1000~1500</apparelMoney>
 		<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
-		<weaponMoney>
-			<min>425</min>
-			<max>555</max>
-		</weaponMoney>
+		<weaponMoney>330~650</weaponMoney>
 		<weaponTags>
-			<li>SMercs_WeaponTag_Advanced_Gun</li>
+			<li>Gun</li>
 		</weaponTags>
+		<disallowedTraits>
+			<li>Brawler</li>
+		</disallowedTraits>
 		<combatEnhancingDrugsChance>0.05</combatEnhancingDrugsChance>
-		<combatEnhancingDrugsCount>
-			<min>0</min>
-			<max>2</max>
-		</combatEnhancingDrugsCount>
+		<combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
 		<inventoryOptions>
-			<skipChance>0.8</skipChance>
+			<skipChance>0.9</skipChance>
 			<subOptionsChooseOne>
 				<li>
-					<thingDef>Silver</thingDef>
-					<countRange>
-						<min>50</min>
-						<max>200</max>
-					</countRange>
-				</li>
-				<li>
 					<thingDef>MedicineIndustrial</thingDef>
-					<countRange>
-						<min>1</min>
-						<max>1</max>
-					</countRange>
+					<countRange>1</countRange>
 				</li>
 			</subOptionsChooseOne>
 		</inventoryOptions>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>4~14</range>
+			</li>
+		</skills>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base">
-		<defName>SMercs_PawnKindDef_RWM_Sniper</defName>
-		<label>sniper</label>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Gunner_Base">
+		<defName>SMercs_PawnKindDef_RWM_Gunner</defName>
+		<initialResistanceRange>6~10</initialResistanceRange>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base" Name="SMercs_PawnKindDef_RWM_Sniper_Base" Abstract="True">
+		<label>mercenary sniper</label>
 		<combatPower>110</combatPower>
-		<gearHealthRange>
-			<min>0.7</min>
-			<max>3.2</max>
-		</gearHealthRange>
+		<gearHealthRange>0.7~3.2</gearHealthRange>
 		<apparelTags>
 			<li>IndustrialBasic</li>
 			<li>IndustrialAdvanced</li>
 			<li>IndustrialMilitaryBasic</li>
 			<li>IndustrialMilitaryAdvanced</li>
 		</apparelTags>
-		<apparelMoney>
-			<min>1000</min>
-			<max>1500</max>
-		</apparelMoney>
+		<apparelMoney>1000~1500</apparelMoney>
 		<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
-		<weaponMoney>
-			<min>530</min>
-			<max>600</max>
-		</weaponMoney>
+		<weaponMoney>600~600</weaponMoney>
 		<weaponTags>
 			<li>SniperRifle</li>
 		</weaponTags>
 		<inventoryOptions>
-			<skipChance>0.8</skipChance>
+			<skipChance>0.9</skipChance>
 			<subOptionsChooseOne>
 				<li>
-					<thingDef>Silver</thingDef>
-					<countRange>
-						<min>50</min>
-						<max>200</max>
-					</countRange>
-				</li>
-				<li>
 					<thingDef>MedicineIndustrial</thingDef>
-					<countRange>
-						<min>1</min>
-						<max>1</max>
-					</countRange>
+					<countRange>1</countRange>
 				</li>
 			</subOptionsChooseOne>
 		</inventoryOptions>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>8~16</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Sniper_Base">
+		<defName>SMercs_PawnKindDef_RWM_Sniper</defName>
+		<initialResistanceRange>13~20</initialResistanceRange>
 	</PawnKindDef>
 
 	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base">
-		<defName>SMercs_PawnKindDef_RWM_Slasher</defName>
-		<label>slasher</label>
-		<combatPower>150</combatPower>
-		<canBeSapper>true</canBeSapper>
-		<gearHealthRange>
-			<min>0.7</min>
-			<max>3.2</max>
-		</gearHealthRange>
+		<defName>SMercs_PawnKindDef_RWM_Heavy</defName>
+		<label>heavy mercenary</label>
+		<labelPlural>heavy mercenaries</labelPlural>
+		<combatPower>140</combatPower>
+		<gearHealthRange>0.7~3.2</gearHealthRange>
 		<apparelTags>
 			<li>IndustrialBasic</li>
 			<li>IndustrialAdvanced</li>
 			<li>IndustrialMilitaryBasic</li>
+			<li>IndustrialMilitaryAdvanced</li>
+			<li>BeltDefensePop</li>
 		</apparelTags>
-		<apparelRequired>
-			<li>Apparel_ShieldBelt</li>
-		</apparelRequired>
-		<apparelMoney>
-			<min>1000</min>
-			<max>1400</max>
-		</apparelMoney>
-		<apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
-		<weaponMoney>
-			<min>200</min>
-			<max>500</max>
-		</weaponMoney>
+		<apparelMoney>200~350</apparelMoney>
+		<apparelAllowHeadgearChance>0.5</apparelAllowHeadgearChance>
+		<weaponMoney>1200~1200</weaponMoney>
 		<weaponTags>
-			<li>MedievalMeleeDecent</li>
-			<li>MedievalMeleeAdvanced</li>
+			<li>GunHeavy</li>
+			<li>GunSingleUse</li>
+			<li>Flamethrower</li>
 		</weaponTags>
-		<inventoryOptions>
-			<skipChance>0.8</skipChance>
-			<subOptionsChooseOne>
-				<li>
-					<thingDef>Silver</thingDef>
-					<countRange>
-						<min>180</min>
-						<max>400</max>
-					</countRange>
-				</li>
-				<li>
-					<thingDef>MedicineIndustrial</thingDef>
-					<countRange>
-						<min>1</min>
-						<max>2</max>
-					</countRange>
-				</li>
-			</subOptionsChooseOne>
-		</inventoryOptions>
+		<initialResistanceRange>14~23</initialResistanceRange>
 	</PawnKindDef>
 
 	<!-- Elite tier - merc elite, pirate boss -->
 
-	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_RWM_EliteTier_Base"
-		ParentName="SMercs_PawnKindDef_RWM_Base">
-		<combatPower>150</combatPower>
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_RWM_EliteTier_Base" ParentName="SMercs_PawnKindDef_RWM_Base">
+		<combatPower>130</combatPower>
+		<maxGenerationAge>45</maxGenerationAge>
 		<backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality>
-		<gearHealthRange>
-			<min>1</min>
-			<max>1</max>
-		</gearHealthRange>
+		<gearHealthRange>1~1</gearHealthRange>
 		<apparelTags>
 			<li>IndustrialBasic</li>
 			<li>IndustrialAdvanced</li>
@@ -298,50 +197,59 @@
 			<li>SpacerMilitary</li>
 			<li>BeltDefensePop</li>
 		</apparelTags>
-		<apparelMoney>
-			<min>2500</min>
-			<max>3500</max>
-		</apparelMoney>
+		<apparelMoney>2500~3500</apparelMoney>
 		<apparelAllowHeadgearChance>0.9</apparelAllowHeadgearChance>
-		<weaponMoney>
-			<min>425</min>
-			<max>1400</max>
-		</weaponMoney>
+		<weaponMoney>500~1400</weaponMoney>
 		<weaponTags>
 			<li>IndustrialGunAdvanced</li>
-			<li>SpacerGun</li>
 		</weaponTags>
-		<techHediffsMoney>
-			<min>1000</min>
-			<max>2000</max>
-		</techHediffsMoney>
+		<disallowedTraits>
+			<li>Brawler</li>
+		</disallowedTraits>
+		<techHediffsMoney>1000~1200</techHediffsMoney>
 		<techHediffsTags>
 			<li>Advanced</li>
+			<li>ImplantEmpireCommon</li>
 		</techHediffsTags>
-		<techHediffsChance>0.60</techHediffsChance>
+		<techHediffsChance>0.35</techHediffsChance>
 		<combatEnhancingDrugsChance>0.80</combatEnhancingDrugsChance>
-		<combatEnhancingDrugsCount>
-			<min>1</min>
-			<max>2</max>
-		</combatEnhancingDrugsCount>
+		<combatEnhancingDrugsCount>1~2</combatEnhancingDrugsCount>
+		<biocodeWeaponChance>0.3</biocodeWeaponChance>
+		<initialWillRange>3~5</initialWillRange>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_EliteTier_Base">
-		<defName>SMercs_PawnKindDef_RWM_Elite</defName>
+	<PawnKindDef ParentName="MercenaryEliteTierBase">
+		<defName>PirateBoss</defName>
+		<label>boss</label>
+		<labelPlural>bosses</labelPlural>
+		<factionLeader>true</factionLeader>
+		<canBeSapper>true</canBeSapper>
+		<initialResistanceRange>17~27</initialResistanceRange>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_EliteTier_Base" Name="SMercs_PawnKindDef_RWM_Elite_Base" Abstract="True">
 		<label>elite mercenary</label>
 		<labelPlural>elite mercenaries</labelPlural>
 		<inventoryOptions>
-			<skipChance>0.8</skipChance>
+			<skipChance>0.9</skipChance>
 			<subOptionsChooseOne>
 				<li>
 					<thingDef>MedicineIndustrial</thingDef>
-					<countRange>
-						<min>1</min>
-						<max>2</max>
-					</countRange>
+					<countRange>1</countRange>
 				</li>
 			</subOptionsChooseOne>
 		</inventoryOptions>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>10~15</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Elite_Base">
+		<defName>SMercs_PawnKindDef_RWM_Elite</defName>
+		<initialResistanceRange>15~23</initialResistanceRange>
 	</PawnKindDef>
 
 </Defs>

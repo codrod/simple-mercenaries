@@ -3,14 +3,6 @@
 <Defs>
 
 	<SimpleMercenaries.Core.RankDef>
-		<defName>SMercs_RankDef_RWM_Scavenger</defName>
-		<label>Mercenary scavenger</label>
-		<pawnKindDef>SMercs_PawnKindDef_RWM_Scavenger</pawnKindDef>
-		<cost>500</cost>
-		<spawnTime>60000</spawnTime>
-	</SimpleMercenaries.Core.RankDef>
-
-	<SimpleMercenaries.Core.RankDef>
 		<defName>SMercs_RankDef_RWM_Gunner</defName>
 		<label>Mercenary gunner</label>
 		<pawnKindDef>SMercs_PawnKindDef_RWM_Gunner</pawnKindDef>
@@ -27,16 +19,6 @@
 		<trainingDef>SMercs_TrainingDef_RWM_Low</trainingDef>
 		<!--<adulthood>SMercs_BackstoryDef_RWM_Mercenary</adulthood>-->
 		<cost>2500</cost>
-		<spawnTime>60000</spawnTime>
-	</SimpleMercenaries.Core.RankDef>
-
-	<SimpleMercenaries.Core.RankDef>
-		<defName>SMercs_RankDef_RWM_Slasher</defName>
-		<label>Mercenary slasher</label>
-		<pawnKindDef>SMercs_PawnKindDef_RWM_Slasher</pawnKindDef>
-		<trainingDef>SMercs_TrainingDef_RWM_Melee</trainingDef>
-		<!--<adulthood>SMercs_BackstoryDef_RWM_Mercenary</adulthood>-->
-		<cost>1500</cost>
 		<spawnTime>60000</spawnTime>
 	</SimpleMercenaries.Core.RankDef>
 
