@@ -23,8 +23,8 @@
 			<li>SMercs_RankDef_RWM_Elite</li>
 		</rankList>
 	</SimpleMercenaries.Core.ArmyDef>-->
-	<SimpleMercenaries.Core.ArmyDef>
-		<defName>SMercs_ArmyDef_RWM</defName>
+	<SimpleMercenaries.Core.CompanyDef>
+		<defName>SMercs_CompanyDef_RWM</defName>
 		<label>Rimworld mercenary corps</label>
 		<factionDef>SMercs_FactionDef_RWM_Colony</factionDef>
 		<!--<startingUnit>SMercs_UnitDef_RWM_Starting_Unit</startingUnit>-->
@@ -35,5 +35,5 @@
 			<li>SMercs_RankDef_RWM_Sniper</li>
 			<li>SMercs_RankDef_RWM_Elite</li>
 		</rankList>
-	</SimpleMercenaries.Core.ArmyDef>
+	</SimpleMercenaries.Core.CompanyDef>
 </Defs>

@@ -13,7 +13,7 @@
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
     <canGenerateQuestSites>false</canGenerateQuestSites>
-    <hidden>false</hidden>
+    <hidden>true</hidden>
 
     <canSiege>false</canSiege>
     <canStageAttacks>false</canStageAttacks>
@@ -26,6 +26,11 @@
     <factionIconPath>World/WorldObjects/Expanding/PirateOutpost</factionIconPath>
     <factionNameMaker>NamerFactionPirate</factionNameMaker>
     <settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
+
+    <caravanTraderKinds>
+      <li>Caravan_Merc_Test</li>
+    </caravanTraderKinds>
+
     <colorSpectrum>
       <li>(0.78, 0, 0.27)</li>
       <li>(1, 0.74, 0.83)</li>
@@ -82,6 +87,26 @@
       </points>
     </maxPawnCostPerTotalPointsCurve>
     <pawnGroupMakers>
+      <li>
+        <kindDef>Trader</kindDef>
+        <traders>
+          <Town_Trader>1</Town_Trader>
+        </traders>
+        <carriers>
+          <Muffalo>6</Muffalo>
+          <Dromedary>5</Dromedary>
+          <Alpaca>2</Alpaca>
+          <Elephant>1</Elephant>
+        </carriers>
+        <guards>
+          <Villager>3</Villager>
+          <Town_Guard>10</Town_Guard>
+          <Grenadier_Destructive>1.5</Grenadier_Destructive>
+          <Mercenary_Slasher>7</Mercenary_Slasher>
+          <Mercenary_Gunner>10</Mercenary_Gunner>
+          <Mercenary_Elite>10</Mercenary_Elite>
+        </guards>
+      </li>
       <li>
         <!-- Normal fights, ranged with melee mix-ins -->
         <kindDef>Combat</kindDef>

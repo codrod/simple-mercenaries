@@ -1,28 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
-
 	<ThingDef ParentName="BuildingBase">
-		<defName>SMercs_ThingDef_MilitaryCommsConsole</defName>
+		<defName>SMercs_ThingDef_Building_MercenaryCommsConsole</defName>
 		<label>military comms console</label>
-		<description>Allows the request of reinforcments.</description>
-		<thingClass>RMC.Building_MilitaryCommsConsole</thingClass>
+		<description>Allows radio contact with other factions and orbital traders.</description>
+		<thingClass>SimpleMercenaries.Core.Building_MercenaryCommsConsole</thingClass>
 		<graphicData>
 			<texPath>Things/Building/Misc/CommsConsole</texPath>
 			<graphicClass>Graphic_Multi</graphicClass>
 			<drawSize>(5,4)</drawSize>
 			<damageData>
-			<rect>(0,0,3,1.8)</rect>
-			<cornerBL>Damage/Corner</cornerBL>
-			<cornerBR>Damage/Corner</cornerBR>
+				<rect>(0,0,3,1.8)</rect>
+				<cornerBL>Damage/Corner</cornerBL>
+				<cornerBR>Damage/Corner</cornerBR>
 			</damageData>
 			<shadowData>
-			<volume>(3,0.5,2)</volume>
+				<volume>(3,0.5,2)</volume>
 			</shadowData>
 		</graphicData>
 		<altitudeLayer>Building</altitudeLayer>
 		<passability>PassThroughOnly</passability>
-		<pathCost>70</pathCost>
+		<pathCost>50</pathCost>
 		<blockWind>true</blockWind>
 		<castEdgeShadows>false</castEdgeShadows>
 		<fillPercent>0.5</fillPercent>
@@ -33,6 +32,9 @@
 			<Flammability>0.6</Flammability>
 		</statBases>
 		<size>(3,2)</size>
+		<building>
+			<destroySound>BuildingDestroyed_Metal_Big</destroySound>
+		</building>
 		<costList>
 			<Steel>120</Steel>
 			<ComponentIndustrial>4</ComponentIndustrial>
@@ -42,17 +44,23 @@
 		<hasInteractionCell>true</hasInteractionCell>
 		<terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
 		<designationCategory>Misc</designationCategory>
+		<uiOrder>2100</uiOrder>
 		<comps>
 			<li Class="CompProperties_Power">
 				<compClass>CompPowerTrader</compClass>
 				<shortCircuitInRain>true</shortCircuitInRain>
 				<basePowerConsumption>200</basePowerConsumption>
 			</li>
-			<li Class="CompProperties_Flickable"/>
-			<li Class="CompProperties_Breakdownable"/>
+			<li Class="CompProperties_Flickable" />
+			<li Class="CompProperties_Breakdownable" />
 		</comps>
 		<designationHotKey>Misc3</designationHotKey>
+		<placeWorkers>
+			<li>PlaceWorker_PreventInteractionSpotOverlap</li>
+		</placeWorkers>
+		<researchPrerequisites>
+			<li>MicroelectronicsBasics</li>
+		</researchPrerequisites>
 		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
 	</ThingDef>
-  
 </Defs>

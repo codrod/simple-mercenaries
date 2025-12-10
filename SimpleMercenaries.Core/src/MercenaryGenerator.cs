@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace SimpleMercenaries.Core
 {
-    public class SoldierGenerator
+    public class MercenaryGenerator
     {
         Pawn pawn;
         TraitDef newTraitDef;
@@ -15,7 +15,7 @@ namespace SimpleMercenaries.Core
         //Backstory adulthood;
         RankDef rank;
 
-        public SoldierGenerator(RankDef rank)
+        public MercenaryGenerator(RankDef rank)
         {
             this.rank = rank;
 

@@ -57,7 +57,7 @@ namespace SimpleMercenaries.Core
 
             foreach (KeyValuePair<RankDef, int> rank in soldiers)
                 for (int j = 0; j < rank.Value; j++)
-                    pawns.Add(new SoldierGenerator(rank.Key).Generate());
+                    pawns.Add(new MercenaryGenerator(rank.Key).Generate());
 
             return pawns;
         }
