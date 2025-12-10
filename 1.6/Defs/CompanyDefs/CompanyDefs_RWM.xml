@@ -27,13 +27,11 @@
 		<defName>SMercs_CompanyDef_RWM</defName>
 		<label>Rimworld mercenary corps</label>
 		<factionDef>SMercs_FactionDef_RWM_Colony</factionDef>
-		<!--<startingUnit>SMercs_UnitDef_RWM_Starting_Unit</startingUnit>-->
-		<useDropPods>false</useDropPods>
-		<rankList>
-			<li>SMercs_RankDef_RWM_Gunner</li>
-			<li>SMercs_RankDef_RWM_Grenadier_Destructive</li>
-			<li>SMercs_RankDef_RWM_Sniper</li>
-			<li>SMercs_RankDef_RWM_Elite</li>
-		</rankList>
+		<pawnKindDefs>
+			<li>SMercs_PawnKindDef_RWM_Gunner</li>
+			<li>SMercs_PawnKindDef_RWM_Grenadier_Destructive</li>
+			<li>SMercs_PawnKindDef_RWM_Sniper</li>
+			<li>SMercs_PawnKindDef_RWM_Elite</li>
+		</pawnKindDefs>
 	</SimpleMercenaries.Core.CompanyDef>
 </Defs>

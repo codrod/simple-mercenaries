@@ -1,3 +1,15 @@
+# TODO
+
+* Hired mercenaries should not have the "freeded from slaver" mood modifier
+    * May be able to derive a Mercenary class from Pawn which overrides the PreTrade() method which handles the mood modifier
+* Make mercenaries dismissable without a mood penality from "banishment"
+* Charge an upkeep for mercs?
+    * Yearly starting at the first full calendar year
+    * Upkeep paid at last day of the year
+        * But can be delayed by one month
+        * If left unpaid then merc leaves with all equipment
+            * Maybe even does something more extreme...
+
 # install/
 
 * dotnet-cli

@@ -8,10 +8,27 @@
 		<invNutrition>2.55</invNutrition>
 		<itemQuality>Normal</itemQuality>
 		<backstoryCryptosleepCommonality>0.08</backstoryCryptosleepCommonality>
-		<maxGenerationAge>65</maxGenerationAge>
+		<minGenerationAge>21</minGenerationAge>
+		<maxGenerationAge>40</maxGenerationAge>
 		<combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
 		<combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
-		<biocodeWeaponChance>0.1</biocodeWeaponChance>
+		<fixedAdultBackstories>
+			<li>SMercs_BackstoryDef_RWM_Mercenary</li>
+		</fixedAdultBackstories>
+		<disallowedTraits>
+			<li>Nudist</li>
+			<li>Kind</li>
+			<li>Brawler</li>
+			<li>Pyromaniac</li>
+			<li>Wimp</li>
+			<li>TorturedArtist</li>
+		</disallowedTraits>
+		<disallowedTraitsWithDegree>
+			<SpeedOffset>-1</SpeedOffset>
+			<Nerves>-1</Nerves>
+			<Nerves>-2</Nerves>
+			<Immunity>-1</Immunity>
+		</disallowedTraitsWithDegree>
 	</PawnKindDef>
 
 	<!-- Low merc tier - grenadiers -->
@@ -36,9 +53,6 @@
 			<li>Simple</li>
 			<li>ImplantEmpireCommon</li>
 		</techHediffsTags>
-		<disallowedTraits>
-			<li>Brawler</li>
-		</disallowedTraits>
 		<inventoryOptions>
 			<skipChance>0.95</skipChance>
 			<subOptionsChooseOne>
@@ -72,7 +86,6 @@
 			<li>Advanced</li>
 			<li>ImplantEmpireCommon</li>
 		</techHediffsTags>
-		<biocodeWeaponChance>0.2</biocodeWeaponChance>
 		<initialWillRange>2~4</initialWillRange>
 	</PawnKindDef>
 
@@ -93,9 +106,6 @@
 		<weaponTags>
 			<li>Gun</li>
 		</weaponTags>
-		<disallowedTraits>
-			<li>Brawler</li>
-		</disallowedTraits>
 		<combatEnhancingDrugsChance>0.05</combatEnhancingDrugsChance>
 		<combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
 		<inventoryOptions>
@@ -186,7 +196,6 @@
 
 	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_RWM_EliteTier_Base" ParentName="SMercs_PawnKindDef_RWM_Base">
 		<combatPower>130</combatPower>
-		<maxGenerationAge>45</maxGenerationAge>
 		<backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality>
 		<gearHealthRange>1~1</gearHealthRange>
 		<apparelTags>
@@ -203,9 +212,6 @@
 		<weaponTags>
 			<li>IndustrialGunAdvanced</li>
 		</weaponTags>
-		<disallowedTraits>
-			<li>Brawler</li>
-		</disallowedTraits>
 		<techHediffsMoney>1000~1200</techHediffsMoney>
 		<techHediffsTags>
 			<li>Advanced</li>
@@ -214,17 +220,7 @@
 		<techHediffsChance>0.35</techHediffsChance>
 		<combatEnhancingDrugsChance>0.80</combatEnhancingDrugsChance>
 		<combatEnhancingDrugsCount>1~2</combatEnhancingDrugsCount>
-		<biocodeWeaponChance>0.3</biocodeWeaponChance>
 		<initialWillRange>3~5</initialWillRange>
-	</PawnKindDef>
-
-	<PawnKindDef ParentName="MercenaryEliteTierBase">
-		<defName>PirateBoss</defName>
-		<label>boss</label>
-		<labelPlural>bosses</labelPlural>
-		<factionLeader>true</factionLeader>
-		<canBeSapper>true</canBeSapper>
-		<initialResistanceRange>17~27</initialResistanceRange>
 	</PawnKindDef>
 
 	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_EliteTier_Base" Name="SMercs_PawnKindDef_RWM_Elite_Base" Abstract="True">
