@@ -27,9 +27,9 @@
     <factionNameMaker>NamerFactionPirate</factionNameMaker>
     <settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
 
-    <caravanTraderKinds>
+    <orbitalTraderKinds>
       <li>Caravan_Merc_Test</li>
-    </caravanTraderKinds>
+    </orbitalTraderKinds>
 
     <colorSpectrum>
       <li>(0.78, 0, 0.27)</li>

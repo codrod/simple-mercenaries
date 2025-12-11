@@ -27,6 +27,7 @@
 		<defName>SMercs_CompanyDef_RWM</defName>
 		<label>Rimworld mercenary corps</label>
 		<factionDef>SMercs_FactionDef_RWM_Colony</factionDef>
+		<traderKindDef>Caravan_Merc_Test</traderKindDef>
 		<pawnKindDefs>
 			<li>SMercs_PawnKindDef_RWM_Gunner</li>
 			<li>SMercs_PawnKindDef_RWM_Grenadier_Destructive</li>

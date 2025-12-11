@@ -5,6 +5,7 @@
         <defName>Caravan_Merc_Test</defName>
         <label>mercs</label>
         <category>Slaver</category>
+        <orbital>true</orbital>
         <stockGenerators>
             <!-- Resources -->
             <li Class="StockGenerator_SingleDef">

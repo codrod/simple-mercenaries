@@ -60,15 +60,15 @@ namespace SimpleMercenaries.Core
 
             if (map != null && map.IsPlayerHome)
             {
-                if (faction.def.canRequestTraders)
+                /*if (faction.def.canRequestTraders)
                 {
                     AddAndDecorateOption(RequestTraderOption(map, faction, negotiator), needsSocial: true);
-                }
+                }*/
 
-                if (faction.def.canRequestOrbitalTrader)
-                {
+                //if (faction.def.canRequestOrbitalTrader)
+                //{
                     AddAndDecorateOption(RequestOrbitalTraderOption(map, faction, negotiator), needsSocial: true);
-                }
+                //}
 
                 /*
                 if (faction.def.canRequestMilitaryAid)
@@ -163,13 +163,13 @@ namespace SimpleMercenaries.Core
 
         private static DiaOption RequestOrbitalTraderOption(Map map, Faction faction, Pawn negotiator)
         {
-            TaggedString taggedString = "RequestOrbitalTrader".Translate(-Faction.OfPlayer.CalculateAdjustedGoodwillChange(faction, -30));
-            if (faction.PlayerRelationKind != FactionRelationKind.Ally)
+            TaggedString taggedString = "RequestOrbitalTrader".Translate(-Faction.OfPlayer.CalculateAdjustedGoodwillChange(faction, 0));
+            /*if (faction.PlayerRelationKind != FactionRelationKind.Ally)
             {
                 DiaOption diaOption = new DiaOption(taggedString);
                 diaOption.Disable("MustBeAlly".Translate());
                 return diaOption;
-            }
+            }*/
 
             int num = faction.lastOrbitalTraderRequestTick + 900000 - Find.TickManager.TicksGame;
             if (num > 0)

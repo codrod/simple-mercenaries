@@ -17,7 +17,8 @@ namespace SimpleMercenaries.Core
         {
             int count = countRange.RandomInRange;
 
-            CompanyDef company = CompanyDef.GetCompanyByFaction(faction);
+            //CompanyDef company = CompanyDef.GetCompanyByFaction(faction);
+            CompanyDef company = DefDatabase<CompanyDef>.AllDefs.First();
 
             for (int i = 0; i < count; i++)
             {
@@ -32,7 +33,7 @@ namespace SimpleMercenaries.Core
                 
                 Pawn pawn = MercenaryGenerator.Generate(request);
 
-                pawn.kindDef = PawnKindDefOf.Slave;
+                //pawn.kindDef = PawnKindDefOf.Slave;
                 pawn.guest.joinStatus = JoinStatus.JoinAsColonist;
 
                 yield return pawn;
