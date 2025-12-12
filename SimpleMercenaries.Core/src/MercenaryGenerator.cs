@@ -10,7 +10,11 @@ namespace SimpleMercenaries.Core
     {
         public static Pawn Generate(PawnGenerationRequest request)
         {
+            //Need to validate pawns after generation because they sometimes dont have the right backstories
             Pawn pawn = Verse.PawnGenerator.GeneratePawn(request);
+
+            //Mercs should not join the colony as "slaves"
+            pawn.guest.joinStatus = JoinStatus.JoinAsColonist;
 
             return pawn;
         }

@@ -48,7 +48,7 @@ namespace SimpleMercenaries.Core
 
         public new IEnumerable<ICommunicable> GetCommTargets(Pawn myPawn)
         {
-            return DefDatabase<CompanyDef>.AllDefs;
+            return CompanyManager.GetAllCompanies();
         }
 
         public override IEnumerable<FloatMenuOption> GetFloatMenuOptions(Pawn myPawn)

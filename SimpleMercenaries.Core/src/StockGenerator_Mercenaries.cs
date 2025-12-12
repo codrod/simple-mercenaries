@@ -17,13 +17,14 @@ namespace SimpleMercenaries.Core
         {
             int count = countRange.RandomInRange;
 
+            Company company = CompanyManager.GetCompanyByFaction(faction);
             //CompanyDef company = CompanyDef.GetCompanyByFaction(faction);
-            CompanyDef company = DefDatabase<CompanyDef>.AllDefs.First();
+            //CompanyDef company = DefDatabase<CompanyDef>.AllDefs.First();
 
             for (int i = 0; i < count; i++)
             {
                 //remember to randomize this?
-                PawnKindDef kind = company.pawnKindDefs.First();
+                PawnKindDef kind = company.def.pawnKindDefs.First();
 
                 PawnGenerationRequest request = MercenaryGenerator.GetGenerationRequest(kind);
 
@@ -32,10 +33,7 @@ namespace SimpleMercenaries.Core
                 request.ForceAddFreeWarmLayerIfNeeded = !trader.orbital;
                 
                 Pawn pawn = MercenaryGenerator.Generate(request);
-
-                //pawn.kindDef = PawnKindDefOf.Slave;
-                pawn.guest.joinStatus = JoinStatus.JoinAsColonist;
-
+                
                 yield return pawn;
             }
         }
