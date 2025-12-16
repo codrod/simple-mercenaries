@@ -12,8 +12,6 @@ namespace SimpleMercenaries.Core
 {
     public static class CompanyDialogMaker
     {
-        private static readonly FloatRange OrbitalTraderDelayHours = new FloatRange(1f, 2f);
-
         public static DiaNode DialogFor(Pawn negotiator, Faction faction)
         {
             Map map = negotiator.Map;
@@ -60,53 +58,14 @@ namespace SimpleMercenaries.Core
 
             if (map != null && map.IsPlayerHome)
             {
-                /*if (faction.def.canRequestTraders)
-                {
-                    AddAndDecorateOption(RequestTraderOption(map, faction, negotiator), needsSocial: true);
-                }*/
+                Company company = CompanyManager.GetCompanyByFaction(faction);
 
-                //if (faction.def.canRequestOrbitalTrader)
-                //{
-                    AddAndDecorateOption(RequestOrbitalTraderOption(map, faction, negotiator), needsSocial: true);
-                //}
+                AddAndDecorateOption(HireMercenariesOption(map, faction, negotiator), needsSocial: true);
 
-                /*
-                if (faction.def.canRequestMilitaryAid)
+                if (company.def.orbital)
                 {
                     AddAndDecorateOption(RequestMilitaryAidOption(map, faction, negotiator), needsSocial: true);
                 }
-                */
-
-                /*Pawn_RoyaltyTracker royalty = negotiator.royalty;
-                if (royalty != null && royalty.HasAnyTitleIn(faction))
-                {
-                    foreach (RoyalTitle item in royalty.AllTitlesInEffectForReading)
-                    {
-                        if (item.def.permits == null)
-                        {
-                            continue;
-                        }
-
-                        foreach (RoyalTitlePermitDef permit in item.def.permits)
-                        {
-                            IEnumerable<DiaOption> factionCommDialogOptions = permit.Worker.GetFactionCommDialogOptions(map, negotiator, faction);
-                            if (factionCommDialogOptions == null)
-                            {
-                                continue;
-                            }
-
-                            foreach (DiaOption item2 in factionCommDialogOptions)
-                            {
-                                AddAndDecorateOption(item2, needsSocial: true);
-                            }
-                        }
-                    }
-
-                    if (royalty.GetCurrentTitle(faction).canBeInherited && !negotiator.IsQuestLodger())
-                    {
-                        AddAndDecorateOption(RequestRoyalHeirChangeOption(map, faction, pawn, negotiator), needsSocial: false);
-                    }
-                }*/
             }
 
             if (Prefs.DevMode)
@@ -121,7 +80,9 @@ namespace SimpleMercenaries.Core
             {
                 resolveTree = true
             }, needsSocial: false);
+
             return root;
+
             void AddAndDecorateOption(DiaOption opt, bool needsSocial)
             {
                 if (opt != null)
@@ -161,151 +122,28 @@ namespace SimpleMercenaries.Core
                     select t).Sum((Thing t) => t.stackCount);
         }
 
-        private static DiaOption RequestOrbitalTraderOption(Map map, Faction faction, Pawn negotiator)
+        private static DiaOption HireMercenariesOption(Map map, Faction faction, Pawn negotiator)
         {
-            TaggedString taggedString = "RequestOrbitalTrader".Translate(-Faction.OfPlayer.CalculateAdjustedGoodwillChange(faction, 0));
-            /*if (faction.PlayerRelationKind != FactionRelationKind.Ally)
+            Company company = CompanyManager.GetCompanyByFaction(faction);
+            DiaOption diaOption = new DiaOption("Hire mercenaries");
+            
+            diaOption.action = delegate
             {
-                DiaOption diaOption = new DiaOption(taggedString);
-                diaOption.Disable("MustBeAlly".Translate());
-                return diaOption;
-            }*/
-
-            int num = faction.lastOrbitalTraderRequestTick + 900000 - Find.TickManager.TicksGame;
-            if (num > 0)
-            {
-                DiaOption diaOption2 = new DiaOption(taggedString);
-                diaOption2.Disable("WaitTime".Translate(num.ToStringTicksToPeriod()));
-                return diaOption2;
-            }
-
-            DiaOption diaOption3 = new DiaOption(taggedString);
-            DiaNode diaNode = new DiaNode("OrbitalTraderSent".Translate(faction.leader).CapitalizeFirst());
-            diaNode.options.Add(OKToRoot(faction, negotiator));
-            DiaNode diaNode2 = new DiaNode("ChooseOrbitalTraderKind".Translate(faction.leader));
-            foreach (TraderKindDef item in faction.def.orbitalTraderKinds.Where((TraderKindDef x) => x.requestable))
-            {
-                TraderKindDef localTk = item;
-                DiaOption diaOption4 = new DiaOption(localTk.LabelCap);
-                if (localTk.TitleRequiredToTrade != null && (negotiator.royalty == null || localTk.TitleRequiredToTrade.seniority > negotiator.GetCurrentTitleSeniorityIn(faction)))
-                {
-                    DiaNode diaNode3 = new DiaNode("OrbitalTradeRequestDeniedDueTitle".Translate(negotiator.Named("NEGOTIATOR"), localTk.TitleRequiredToTrade.GetLabelCapFor(negotiator).Named("TITLE"), faction.Named("FACTION")));
-                    DiaOption diaOption5 = new DiaOption("GoBack".Translate());
-                    diaNode3.options.Add(diaOption5);
-                    diaOption4.link = diaNode3;
-                    diaOption5.link = diaNode2;
-                }
-                else
-                {
-                    diaOption4.action = delegate
-                    {
-                        IncidentParms parms = new IncidentParms
-                        {
-                            target = map,
-                            faction = faction,
-                            traderKind = localTk,
-                            forced = true
-                        };
-                        PassingShipManager passingShipManager = map.passingShipManager;
-                        for (int num2 = passingShipManager.passingShips.Count - 1; num2 >= 0; num2--)
-                        {
-                            passingShipManager.passingShips[num2].Depart();
-                        }
-
-                        Find.Storyteller.incidentQueue.Add(IncidentDefOf.OrbitalTraderArrival, Find.TickManager.TicksGame + Mathf.RoundToInt(OrbitalTraderDelayHours.RandomInRange * 2500f), parms, (int)OrbitalTraderDelayHours.min);
-                        faction.lastOrbitalTraderRequestTick = Find.TickManager.TicksGame;
-                        Faction.OfPlayer.TryAffectGoodwillWith(faction, -30, canSendMessage: false, canSendHostilityLetter: true, HistoryEventDefOf.RequestedOrbitalTrader);
-                    };
-                    diaOption4.link = diaNode;
-                }
-
-                diaNode2.options.Add(diaOption4);
-            }
-
-            DiaOption diaOption6 = new DiaOption("GoBack".Translate());
-            diaOption6.linkLateBind = ResetToRoot(faction, negotiator);
-            diaNode2.options.Add(diaOption6);
-            diaOption3.link = diaNode2;
-            return diaOption3;
+                Find.WindowStack.Add(new Dialog_HireMercenaries(negotiator, company));
+                ResetToRoot(faction, negotiator);
+            };
+            
+            return diaOption;
         }
 
-        private static DiaOption RequestTraderOption(Map map, Faction faction, Pawn negotiator)
-        {
-            TaggedString taggedString = "RequestTrader".Translate(-Faction.OfPlayer.CalculateAdjustedGoodwillChange(faction, 0));
-            /*if (faction.PlayerRelationKind != FactionRelationKind.Ally)
-            {
-                DiaOption diaOption = new DiaOption(taggedString);
-                diaOption.Disable("MustBeAlly".Translate());
-                return diaOption;
-            }*/
-
-            if (!faction.def.allowedArrivalTemperatureRange.ExpandedBy(-4f).Includes(map.mapTemperature.SeasonalTemp))
-            {
-                DiaOption diaOption2 = new DiaOption(taggedString);
-                diaOption2.Disable("BadTemperature".Translate());
-                return diaOption2;
-            }
-
-            int num = faction.lastTraderRequestTick + 240000 - Find.TickManager.TicksGame;
-            if (num > 0)
-            {
-                DiaOption diaOption3 = new DiaOption(taggedString);
-                diaOption3.Disable("WaitTime".Translate(num.ToStringTicksToPeriod()));
-                return diaOption3;
-            }
-
-            DiaOption diaOption4 = new DiaOption(taggedString);
-            DiaNode diaNode = new DiaNode("TraderSent".Translate(faction.leader).CapitalizeFirst());
-            diaNode.options.Add(OKToRoot(faction, negotiator));
-            DiaNode diaNode2 = new DiaNode("ChooseTraderKind".Translate(faction.leader));
-            foreach (TraderKindDef item in faction.def.caravanTraderKinds.Where((TraderKindDef x) => x.requestable))
-            {
-                TraderKindDef localTk = item;
-                DiaOption diaOption5 = new DiaOption(localTk.LabelCap);
-                if (localTk.TitleRequiredToTrade != null && (negotiator.royalty == null || localTk.TitleRequiredToTrade.seniority > negotiator.GetCurrentTitleSeniorityIn(faction)))
-                {
-                    DiaNode diaNode3 = new DiaNode("TradeCaravanRequestDeniedDueTitle".Translate(negotiator.Named("NEGOTIATOR"), localTk.TitleRequiredToTrade.GetLabelCapFor(negotiator).Named("TITLE"), faction.Named("FACTION")));
-                    DiaOption diaOption6 = new DiaOption("GoBack".Translate());
-                    diaNode3.options.Add(diaOption6);
-                    diaOption5.link = diaNode3;
-                    diaOption6.link = diaNode2;
-                }
-                else
-                {
-                    diaOption5.action = delegate
-                    {
-                        IncidentParms parms = new IncidentParms
-                        {
-                            target = map,
-                            faction = faction,
-                            traderKind = localTk,
-                            forced = true
-                        };
-                        Find.Storyteller.incidentQueue.Add(IncidentDefOf.TraderCaravanArrival, Find.TickManager.TicksGame + 120000, parms, 240000);
-                        faction.lastTraderRequestTick = Find.TickManager.TicksGame;
-                        Faction.OfPlayer.TryAffectGoodwillWith(faction, -15, canSendMessage: false, canSendHostilityLetter: true, HistoryEventDefOf.RequestedTrader);
-                    };
-                    diaOption5.link = diaNode;
-                }
-
-                diaNode2.options.Add(diaOption5);
-            }
-
-            DiaOption diaOption7 = new DiaOption("GoBack".Translate());
-            diaOption7.linkLateBind = ResetToRoot(faction, negotiator);
-            diaNode2.options.Add(diaOption7);
-            diaOption4.link = diaNode2;
-            return diaOption4;
-        }
-
-        /*
         private static DiaOption RequestMilitaryAidOption(Map map, Faction faction, Pawn negotiator)
         {
-            string text = "RequestMilitaryAid".Translate(-Faction.OfPlayer.CalculateAdjustedGoodwillChange(faction, -25));
-            if (faction.PlayerRelationKind != FactionRelationKind.Ally)
+            string text = "Request immediate military aid (cost: 2000 silver)";
+
+            if (AmountSendableSilver(map) < 2000)
             {
                 DiaOption diaOption = new DiaOption(text);
-                diaOption.Disable("MustBeAlly".Translate());
+                diaOption.Disable("Not enough silver");
                 return diaOption;
             }
 
@@ -317,6 +155,7 @@ namespace SimpleMercenaries.Core
             }
 
             int num = faction.lastMilitaryAidRequestTick + 60000 - Find.TickManager.TicksGame;
+
             if (num > 0)
             {
                 DiaOption diaOption3 = new DiaOption(text);
@@ -324,53 +163,39 @@ namespace SimpleMercenaries.Core
                 return diaOption3;
             }
 
-            if (NeutralGroupIncidentUtility.AnyBlockingHostileLord(map, faction))
-            {
-                DiaOption diaOption4 = new DiaOption(text);
-                diaOption4.Disable("HostileVisitorsPresent".Translate());
-                return diaOption4;
-            }
-
             DiaOption diaOption5 = new DiaOption(text);
-            if ((int)faction.def.techLevel < 4)
+
+            /*IEnumerable<Faction> source = (from x in map.attackTargetsCache.TargetsHostileToColony
+                                        where GenHostility.IsActiveThreatToPlayer(x)
+                                        select ((Thing)x).Faction into x
+                                        where x != null && !x.HostileTo(faction)
+                                        select x).Distinct();
+            if (source.Any())
             {
-                diaOption5.link = CantMakeItInTime(faction, negotiator);
+                DiaNode diaNode = new DiaNode("MilitaryAidConfirmMutualEnemy".Translate(faction.Name, source.Select((Faction fa) => fa.Name).ToCommaList(useAnd: true)));
+                DiaOption diaOption6 = new DiaOption("CallConfirm".Translate());
+                diaOption6.action = delegate
+                {
+                    CallForAid(map, faction);
+                };
+                diaOption6.link = FightersSent(faction, negotiator);
+                DiaOption diaOption7 = new DiaOption("CallCancel".Translate());
+                diaOption7.linkLateBind = ResetToRoot(faction, negotiator);
+                diaNode.options.Add(diaOption6);
+                diaNode.options.Add(diaOption7);
+                diaOption5.link = diaNode;
             }
             else
-            {
-                IEnumerable<Faction> source = (from x in map.attackTargetsCache.TargetsHostileToColony
-                                            where GenHostility.IsActiveThreatToPlayer(x)
-                                            select ((Thing)x).Faction into x
-                                            where x != null && !x.HostileTo(faction)
-                                            select x).Distinct();
-                if (source.Any())
+            {*/
+                diaOption5.action = delegate
                 {
-                    DiaNode diaNode = new DiaNode("MilitaryAidConfirmMutualEnemy".Translate(faction.Name, source.Select((Faction fa) => fa.Name).ToCommaList(useAnd: true)));
-                    DiaOption diaOption6 = new DiaOption("CallConfirm".Translate());
-                    diaOption6.action = delegate
-                    {
-                        CallForAid(map, faction);
-                    };
-                    diaOption6.link = FightersSent(faction, negotiator);
-                    DiaOption diaOption7 = new DiaOption("CallCancel".Translate());
-                    diaOption7.linkLateBind = ResetToRoot(faction, negotiator);
-                    diaNode.options.Add(diaOption6);
-                    diaNode.options.Add(diaOption7);
-                    diaOption5.link = diaNode;
-                }
-                else
-                {
-                    diaOption5.action = delegate
-                    {
-                        CallForAid(map, faction);
-                    };
-                    diaOption5.link = FightersSent(faction, negotiator);
-                }
-            }
+                    CallForAid(map, faction);
+                };
+                diaOption5.link = FightersSent(faction, negotiator);
+            //}
 
             return diaOption5;
         }
-        */
 
         public static DiaNode CantMakeItInTime(Faction faction, Pawn negotiator)
         {
@@ -396,7 +221,28 @@ namespace SimpleMercenaries.Core
 
         private static void CallForAid(Map map, Faction faction)
         {
-            Faction.OfPlayer.TryAffectGoodwillWith(faction, -25, canSendMessage: false, canSendHostilityLetter: true, HistoryEventDefOf.RequestedMilitaryAid);
+            int amount = 2000;
+
+            //"Pay" the money required
+            foreach(Thing silver in TradeUtility.AllLaunchableThingsForTrade(map).Where(t => t.def == ThingDefOf.Silver))
+            {
+                if(amount >= silver.stackCount)
+                {
+                    amount -= silver.stackCount;
+                    silver.Destroy();
+                }
+                else
+                {
+                    amount = 0;
+                    silver.SplitOff(amount).Destroy();
+                }
+
+                if(amount <= 0)
+                {
+                    break;
+                }
+            }
+            
             IncidentParms incidentParms = new IncidentParms();
             incidentParms.target = map;
             incidentParms.faction = faction;

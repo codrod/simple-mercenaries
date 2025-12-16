@@ -10,9 +10,13 @@ namespace SimpleMercenaries.Core
 {
     public class CompanyDef : Def
     {
+        public bool orbital = false;
+        
         public FactionDef factionDef = null;
 
         public TraderKindDef traderKindDef = null;
+
+        public PawnKindDef factionLeader = null;
 
         public List<PawnKindDef> pawnKindDefs = new List<PawnKindDef>();
 

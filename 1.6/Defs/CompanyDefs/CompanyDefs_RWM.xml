@@ -25,7 +25,8 @@
 	</SimpleMercenaries.Core.ArmyDef>-->
 	<SimpleMercenaries.Core.CompanyDef>
 		<defName>SMercs_CompanyDef_RWM</defName>
-		<label>Rimworld mercenary corps</label>
+		<label>Outlander mercenary company</label>
+		<orbital>true</orbital>
 		<factionDef>SMercs_FactionDef_RWM_Colony</factionDef>
 		<traderKindDef>Caravan_Merc_Test</traderKindDef>
 		<pawnKindDefs>

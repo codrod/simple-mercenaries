@@ -9,7 +9,7 @@ namespace SimpleMercenaries.Core
 {
     public class CompanyManager : GameComponent
     {
-        private List<Company> companies = null;
+        private List<Company> companies = new List<Company>();
 
         public IEnumerable<Company> Companies
         {
@@ -24,9 +24,18 @@ namespace SimpleMercenaries.Core
 
         public override void StartedNewGame()
         {
-            companies = DefDatabase<CompanyDef>.AllDefs
-                .Select(d => new Company(d))
-                .ToList();
+            foreach(CompanyDef companyDef in DefDatabase<CompanyDef>.AllDefs)
+            {
+                Company company = new Company(companyDef);
+                companies.Add(company);
+                
+                //Hidden factions normally don't have leaders so we have to generate one manually
+                if(company.Faction.leader == null)
+                {
+                    PawnGenerationRequest request = MercenaryGenerator.GetGenerationRequest(companyDef.factionDef.fixedLeaderKinds.RandomElement());
+                    company.Faction.leader = MercenaryGenerator.Generate(request);
+                }
+            }
         }
 
         public static IEnumerable<Company> GetAllCompanies()

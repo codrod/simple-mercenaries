@@ -10,8 +10,26 @@ namespace SimpleMercenaries.Core
     {
         public static Pawn Generate(PawnGenerationRequest request)
         {
-            //Need to validate pawns after generation because they sometimes dont have the right backstories
-            Pawn pawn = Verse.PawnGenerator.GeneratePawn(request);
+            Pawn pawn = null;
+            bool isValid = false;
+
+            while (!isValid)
+            {
+                pawn = Verse.PawnGenerator.GeneratePawn(request);
+
+                //Sometimes backstories don't match the fixed backstories for reasons...
+                if
+                (
+                    (request.KindDef.fixedChildBackstories.Any() && !request.KindDef.fixedChildBackstories.Any(b => b == pawn.story.Childhood)) ||
+                    (request.KindDef.fixedAdultBackstories.Any() && !request.KindDef.fixedAdultBackstories.Any(b => b == pawn.story.Adulthood))
+                )
+                {
+                    pawn.Destroy();
+                    continue;
+                }
+
+                isValid = true;
+            }
 
             //Mercs should not join the colony as "slaves"
             pawn.guest.joinStatus = JoinStatus.JoinAsColonist;

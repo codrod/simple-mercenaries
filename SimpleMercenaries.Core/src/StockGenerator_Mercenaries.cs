@@ -9,8 +9,6 @@ namespace SimpleMercenaries.Core
 {
     public class StockGenerator_Mercenaries : StockGenerator
     {
-        private bool respectPopulationIntent;
-
         public PawnKindDef slaveKindDef;
 
         public override IEnumerable<Thing> GenerateThings(PlanetTile forTile, Faction faction = null)
@@ -18,19 +16,16 @@ namespace SimpleMercenaries.Core
             int count = countRange.RandomInRange;
 
             Company company = CompanyManager.GetCompanyByFaction(faction);
-            //CompanyDef company = CompanyDef.GetCompanyByFaction(faction);
-            //CompanyDef company = DefDatabase<CompanyDef>.AllDefs.First();
 
             for (int i = 0; i < count; i++)
             {
-                //remember to randomize this?
-                PawnKindDef kind = company.def.pawnKindDefs.First();
+                PawnKindDef kind = company.def.pawnKindDefs.RandomElementByWeight(pk => 1 / pk.combatPower);
 
                 PawnGenerationRequest request = MercenaryGenerator.GetGenerationRequest(kind);
 
                 request.Faction = faction;
                 request.Tile = forTile;
-                request.ForceAddFreeWarmLayerIfNeeded = !trader.orbital;
+                request.ForceAddFreeWarmLayerIfNeeded = !company.def.orbital;
                 
                 Pawn pawn = MercenaryGenerator.Generate(request);
                 

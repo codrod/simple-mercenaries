@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+	<IncidentDef>
+		<defName>SMercs_IncidentDef_MercenariesHired</defName>
+		<label>mercenaries arrive</label>
+		<category>AllyAssistance</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>SimpleMercenaries.Core.IncidentWorker_MercenariesHired</workerClass>
+		<baseChance>0</baseChance>
+		<populationEffect>None</populationEffect>
+		<minRefireDays>30</minRefireDays>
+		<letterLabel>Mercenaries arrive</letterLabel>
+		<letterText>The mercenaries you hired have arrived.</letterText>
+	</IncidentDef>
+</Defs>
