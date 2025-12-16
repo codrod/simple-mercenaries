@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <FactionDef ParentName="FactionBase" Name="SMercs_FactionDef_Base" Abstract="True">
+    <listOrderPriority>10</listOrderPriority>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <requiredCountAtGameStart>1</requiredCountAtGameStart>
+    <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>
+    <canGenerateQuestSites>false</canGenerateQuestSites>
+
+    <hidden>true</hidden>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <permanentEnemy>false</permanentEnemy>
+    
+    <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+    <raidsForbidden>true</raidsForbidden>
+    <raidCommonalityFromPointsCurve>
+      <points>
+        <li>(0, 0)</li>
+      </points>
+    </raidCommonalityFromPointsCurve>
+  </FactionDef>
+</Defs>

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -9,8 +10,6 @@ namespace SimpleMercenaries.Core
 {
     public class StockGenerator_Mercenaries : StockGenerator
     {
-        public PawnKindDef slaveKindDef;
-
         public override IEnumerable<Thing> GenerateThings(PlanetTile forTile, Faction faction = null)
         {
             int count = countRange.RandomInRange;
@@ -19,7 +18,7 @@ namespace SimpleMercenaries.Core
 
             for (int i = 0; i < count; i++)
             {
-                PawnKindDef kind = company.def.pawnKindDefs.RandomElementByWeight(pk => 1 / pk.combatPower);
+                PawnKindDef kind = company.def.pawnKindDefs.RandomElementByWeight(pk => 1 / Math.Max(1, pk.combatPower));
 
                 PawnGenerationRequest request = MercenaryGenerator.GetGenerationRequest(kind);
 

@@ -2,10 +2,9 @@
 
 <Defs>
     <TraderKindDef>
-        <defName>Caravan_Merc_Test</defName>
-        <label>mercs</label>
-        <category>Slaver</category>
-        <orbital>true</orbital>
+        <defName>SMercs_TraderKind_MercenaryCompany</defName>
+        <label>mercenary company</label>
+        <category>mercenary</category>
         <stockGenerators>
             <!-- Resources -->
             <li Class="StockGenerator_SingleDef">

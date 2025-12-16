@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<BackstoryDef Abstract="True" Name="SMercs_BackstoryDef_OMC_Base">
+		<slot>Adulthood</slot>
+		<bodyTypeGlobal>Male</bodyTypeGlobal>
+   		<bodyTypeFemale>Female</bodyTypeFemale>
+    	<bodyTypeMale>Male</bodyTypeMale>
+		<shuffleable>False</shuffleable>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="SMercs_BackstoryDef_OMC_Base">
+		<defName>SMercs_BackstoryDef_OMC_Mercenary</defName>
+		<label>mercenary backstory</label>
+		<identifier>SMercs_BackstoryDef_OMC_Mercenary</identifier>
+		<description>[PAWN_nameDef] ended up joining a band of rimworld mercenaries for reasons [PAWN_pronoun] does not like to talk about.\n\n[PAWN_pronoun] has managed to survive long enough to develop a modest amount of skill and a fairly dubious moral character.</description>
+		<title>mercenary</title>
+		<titleShort>merc</titleShort>
+		<skillGains>
+			<Shooting>4</Shooting>
+			<Social>-4</Social>
+    	</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="SMercs_BackstoryDef_OMC_Base">
+		<defName>SMercs_BackstoryDef_OMC_Mercenary_Captain</defName>
+		<label>mercenary backstory</label>
+		<identifier>SMercs_BackstoryDef_OMC_Mercenary_Captain</identifier>
+		<description>[PAWN_nameDef] ended up joining a band of rimworld mercenaries for reasons [PAWN_pronoun] does not like to talk about.\n\n[PAWN_pronoun] excelled at mercenary work and eventually gained enough respect, and fear, to use the title captain.</description>
+		<title>mercenary captain</title>
+		<titleShort>captain</titleShort>
+		<skillGains>
+			<Shooting>8</Shooting>
+			<Social>4</Social>
+    	</skillGains>
+	</BackstoryDef>
+</Defs>

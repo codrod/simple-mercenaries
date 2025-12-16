@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
-	<PawnKindDef Name="SMercs_PawnKindDef_RWM_Base" Abstract="True">
+	<PawnKindDef Name="SMercs_PawnKindDef_OMC_Base" Abstract="True">
 		<race>Human</race>
-		<defaultFactionDef>SMercs_FactionDef_RWM_Colony</defaultFactionDef>
+		<defaultFactionDef>SMercs_FactionDef_OMC</defaultFactionDef>
 		<chemicalAddictionChance>0.1</chemicalAddictionChance>
 		<invNutrition>2.55</invNutrition>
 		<itemQuality>Normal</itemQuality>
@@ -12,9 +11,6 @@
 		<maxGenerationAge>40</maxGenerationAge>
 		<combatEnhancingDrugsChance>0.15</combatEnhancingDrugsChance>
 		<combatEnhancingDrugsCount>0~2</combatEnhancingDrugsCount>
-		<fixedAdultBackstories>
-			<li>SMercs_BackstoryDef_RWM_Mercenary</li>
-		</fixedAdultBackstories>
 		<disallowedTraits>
 			<li>Nudist</li>
 			<li>Kind</li>
@@ -29,11 +25,14 @@
 			<Nerves>-2</Nerves>
 			<Immunity>-1</Immunity>
 		</disallowedTraitsWithDegree>
+		<fixedAdultBackstories>
+			<li>SMercs_BackstoryDef_OMC_Mercenary</li>
+		</fixedAdultBackstories>
 	</PawnKindDef>
 
 	<!-- Low merc tier - grenadiers -->
 
-	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_RWM_Grenadier_Base" ParentName="SMercs_PawnKindDef_RWM_Base">
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_OMC_GrenadierBase" ParentName="SMercs_PawnKindDef_OMC_Base">
 		<race>Human</race>
 		<gearHealthRange>0.7~2.3</gearHealthRange>
 		<initialWillRange>1~3</initialWillRange>
@@ -62,10 +61,16 @@
 				</li>
 			</subOptionsChooseOne>
 		</inventoryOptions>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>4~14</range>
+			</li>
+		</skills>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Grenadier_Base">
-		<defName>SMercs_PawnKindDef_RWM_Grenadier_Destructive</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_OMC_GrenadierBase">
+		<defName>SMercs_PawnKindDef_OMC_Grenadier_Destructive</defName>
 		<label>grenadier</label>
 		<combatPower>70</combatPower>
 		<canBeSapper>true</canBeSapper>
@@ -78,7 +83,7 @@
 
 	<!-- Mid merc tier - gunner, slasher, sniper, heavy -->
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Base" Name="SMercs_PawnKindDef_RWM_MidTier_Base" Abstract="True">
+	<PawnKindDef ParentName="SMercs_PawnKindDef_OMC_Base" Name="SMercs_PawnKindDef_OMC_MidTierBase" Abstract="True">
 		<techHediffsChance>0.15</techHediffsChance>
 		<techHediffsMoney>700~1200</techHediffsMoney>
 		<techHediffsTags>
@@ -89,7 +94,7 @@
 		<initialWillRange>2~4</initialWillRange>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base" Name="SMercs_PawnKindDef_RWM_Gunner_Base" Abstract="True">
+	<PawnKindDef ParentName="SMercs_PawnKindDef_OMC_MidTierBase" Name="SMercs_PawnKindDef_OMC_GunnerBase" Abstract="True">
 		<label>mercenary gunner</label>
 		<combatPower>85</combatPower>
 		<gearHealthRange>0.7~3.2</gearHealthRange>
@@ -125,12 +130,12 @@
 		</skills>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Gunner_Base">
-		<defName>SMercs_PawnKindDef_RWM_Gunner</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_OMC_GunnerBase">
+		<defName>SMercs_PawnKindDef_OMC_Gunner</defName>
 		<initialResistanceRange>6~10</initialResistanceRange>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base" Name="SMercs_PawnKindDef_RWM_Sniper_Base" Abstract="True">
+	<PawnKindDef ParentName="SMercs_PawnKindDef_OMC_MidTierBase" Name="SMercs_PawnKindDef_OMC_SniperBase" Abstract="True">
 		<label>mercenary sniper</label>
 		<combatPower>110</combatPower>
 		<gearHealthRange>0.7~3.2</gearHealthRange>
@@ -163,13 +168,13 @@
 		</skills>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Sniper_Base">
-		<defName>SMercs_PawnKindDef_RWM_Sniper</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_OMC_SniperBase">
+		<defName>SMercs_PawnKindDef_OMC_Sniper</defName>
 		<initialResistanceRange>13~20</initialResistanceRange>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_MidTier_Base">
-		<defName>SMercs_PawnKindDef_RWM_Heavy</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_OMC_MidTierBase">
+		<defName>SMercs_PawnKindDef_OMC_Heavy</defName>
 		<label>heavy mercenary</label>
 		<labelPlural>heavy mercenaries</labelPlural>
 		<combatPower>140</combatPower>
@@ -194,7 +199,7 @@
 
 	<!-- Elite tier - merc elite, pirate boss -->
 
-	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_RWM_EliteTier_Base" ParentName="SMercs_PawnKindDef_RWM_Base">
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_OMC_EliteTierBase" ParentName="SMercs_PawnKindDef_OMC_Base">
 		<combatPower>130</combatPower>
 		<backstoryCryptosleepCommonality>0.25</backstoryCryptosleepCommonality>
 		<gearHealthRange>1~1</gearHealthRange>
@@ -221,9 +226,12 @@
 		<combatEnhancingDrugsChance>0.80</combatEnhancingDrugsChance>
 		<combatEnhancingDrugsCount>1~2</combatEnhancingDrugsCount>
 		<initialWillRange>3~5</initialWillRange>
+		<fixedAdultBackstories>
+			<li>SMercs_BackstoryDef_OMC_Mercenary_Captain</li>
+		</fixedAdultBackstories>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_EliteTier_Base" Name="SMercs_PawnKindDef_RWM_Elite_Base" Abstract="True">
+	<PawnKindDef ParentName="SMercs_PawnKindDef_OMC_EliteTierBase" Name="SMercs_PawnKindDef_OMC_EliteBase" Abstract="True">
 		<label>elite mercenary</label>
 		<labelPlural>elite mercenaries</labelPlural>
 		<inventoryOptions>
@@ -243,9 +251,8 @@
 		</skills>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="SMercs_PawnKindDef_RWM_Elite_Base">
-		<defName>SMercs_PawnKindDef_RWM_Elite</defName>
+	<PawnKindDef ParentName="SMercs_PawnKindDef_OMC_EliteBase">
+		<defName>SMercs_PawnKindDef_OMC_Elite</defName>
 		<initialResistanceRange>15~23</initialResistanceRange>
 	</PawnKindDef>
-
 </Defs>

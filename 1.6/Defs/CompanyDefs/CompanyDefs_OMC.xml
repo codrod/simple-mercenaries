@@ -16,24 +16,25 @@
 			<li>SMercs_RankDef_ISC_Doc</li>
 			<li>SMercs_RankDef_ISC_Lieutenant</li>
 			<li>SMercs_RankDef_ISC_Captain</li>
-			<li>SMercs_RankDef_RWM_Gunner</li>
-			<li>SMercs_RankDef_RWM_Grenadier_Destructive</li>
-			<li>SMercs_RankDef_RWM_Slasher</li>
-			<li>SMercs_RankDef_RWM_Sniper</li>
-			<li>SMercs_RankDef_RWM_Elite</li>
+			<li>SMercs_RankDef_OMC_Gunner</li>
+			<li>SMercs_RankDef_OMC_Grenadier_Destructive</li>
+			<li>SMercs_RankDef_OMC_Slasher</li>
+			<li>SMercs_RankDef_OMC_Sniper</li>
+			<li>SMercs_RankDef_OMC_Elite</li>
 		</rankList>
 	</SimpleMercenaries.Core.ArmyDef>-->
 	<SimpleMercenaries.Core.CompanyDef>
-		<defName>SMercs_CompanyDef_RWM</defName>
+		<defName>SMercs_CompanyDef_OMC</defName>
 		<label>Outlander mercenary company</label>
-		<orbital>true</orbital>
-		<factionDef>SMercs_FactionDef_RWM_Colony</factionDef>
-		<traderKindDef>Caravan_Merc_Test</traderKindDef>
+		<orbital>false</orbital>
+		<factionDef>SMercs_FactionDef_OMC</factionDef>
+		<traderKindDef>SMercs_TraderKind_MercenaryCompany</traderKindDef>
 		<pawnKindDefs>
-			<li>SMercs_PawnKindDef_RWM_Gunner</li>
-			<li>SMercs_PawnKindDef_RWM_Grenadier_Destructive</li>
-			<li>SMercs_PawnKindDef_RWM_Sniper</li>
-			<li>SMercs_PawnKindDef_RWM_Elite</li>
+			<li>SMercs_PawnKindDef_OMC_Gunner</li>
+			<li>SMercs_PawnKindDef_OMC_Grenadier_Destructive</li>
+			<li>SMercs_PawnKindDef_OMC_Sniper</li>
+			<li>SMercs_PawnKindDef_OMC_Heavy</li>
+			<li>SMercs_PawnKindDef_OMC_Elite</li>
 		</pawnKindDefs>
 	</SimpleMercenaries.Core.CompanyDef>
 </Defs>
