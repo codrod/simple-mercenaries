@@ -1,27 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
   <FactionDef ParentName="SMercs_FactionDef_Base">
     <defName>SMercs_FactionDef_OMC</defName>
     <label>Outlander mercenary company</label>
-    <description>A mercenary company consisting of outlanders, tribals, thieves, cutthroats, deserters, and pirates willing to fight anyone for the right price. They use a chaotic collection of common weaponry, purchased from anyone willing to sell to them, or more likely looted from the dead.</description>
+    <description>A mercenary company consisting of outlanders, tribals, thieves, cutthroats, deserters, and pirates willing to fight anyone for the right price.\n\nThey use a chaotic collection of common weaponry, purchased from anyone willing to sell to them, or more likely looted from the dead.</description>
     <pawnSingular>Outlander merc</pawnSingular>
     <pawnsPlural>Outlander mercs</pawnsPlural>
+    <leaderTitle>First-captain</leaderTitle>
     <fixedLeaderKinds>
       <li>SMercs_PawnKindDef_OMC_Elite</li>
     </fixedLeaderKinds>
+
     <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
-    <configurationListOrderPriority>60</configurationListOrderPriority>
-    <leaderTitle>First-captain</leaderTitle>
-    <factionIconPath>World/WorldObjects/Expanding/PirateOutpost</factionIconPath>
+    <factionIconPath>World/WorldObjects/Expanding/TownRough</factionIconPath>
     <factionNameMaker>NamerFactionPirate</factionNameMaker>
     <settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
     <colorSpectrum>
-      <li>(0.78, 0, 0.27)</li>
-      <li>(1, 0.74, 0.83)</li>
+      <li>(0.85, 0, 0)</li>
     </colorSpectrum>
+
     <techLevel>Spacer</techLevel>
     <allowedCultures>
       <li>Kriminul</li>
+      <li>Corunan</li>
+      <li>Rustican</li>
     </allowedCultures>
     <requiredMemes>
       <li MayRequire="Ludeon.RimWorld.Ideology">Supremacist</li>
@@ -72,7 +75,6 @@
           <SMercs_PawnKindDef_OMC_Heavy>6</SMercs_PawnKindDef_OMC_Heavy>
           <SMercs_PawnKindDef_OMC_Sniper>7</SMercs_PawnKindDef_OMC_Sniper>
           <SMercs_PawnKindDef_OMC_Elite>10</SMercs_PawnKindDef_OMC_Elite>
-          <PirateBoss>5</PirateBoss>
         </options>
       </li>
     </pawnGroupMakers>

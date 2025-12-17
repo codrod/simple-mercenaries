@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<SimpleMercenaries.Core.CompanyDef>
+		<defName>SMercs_CompanyDef_SMC</defName>
+		<label>Spacer mercenary company</label>
+		<orbital>true</orbital>
+		<factionDef>SMercs_FactionDef_SMC</factionDef>
+		<traderKindDef>SMercs_TraderKind_MercenaryCompany</traderKindDef>
+		<pawnKindDefs>
+			<li>SMercs_PawnKindDef_SMC_Spacemarine</li>
+			<li>SMercs_PawnKindDef_SMC_Tech</li>
+			<li>SMercs_PawnKindDef_SMC_Doc</li>
+			<li>SMercs_PawnKindDef_SMC_Captain</li>
+		</pawnKindDefs>
+	</SimpleMercenaries.Core.CompanyDef>
+</Defs>

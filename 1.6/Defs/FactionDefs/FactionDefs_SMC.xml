@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+  <FactionDef ParentName="SMercs_FactionDef_Base">
+    <defName>SMercs_FactionDef_SMC</defName>
+    <label>Spacer mercenary company</label>
+    <description>testing...</description>
+    <pawnSingular>Spacer merc</pawnSingular>
+    <pawnsPlural>Spacer mercs</pawnsPlural>
+    <leaderTitle>Colonel</leaderTitle>
+    <fixedLeaderKinds>
+      <li>SMercs_PawnKindDef_SMC_Captain</li>
+    </fixedLeaderKinds>
+
+    <factionIconPath>World/WorldObjects/Expanding/PirateOutpost</factionIconPath>
+    <factionNameMaker>NamerFactionPirate</factionNameMaker>
+    <settlementNameMaker>NamerSettlementPirate</settlementNameMaker>
+    <colorSpectrum>
+      <li>(0.78, 0, 0.27)</li>
+      <li>(1, 0.74, 0.83)</li>
+    </colorSpectrum>
+
+    <apparelStuffFilter>
+      <thingDefs>
+        <li>Synthread</li>
+        <li>Plasteel</li>
+      </thingDefs>
+    </apparelStuffFilter>
+    <techLevel>Spacer</techLevel>
+    <allowedCultures>
+      <li>Astropolitan</li>
+    </allowedCultures>
+    <arrivalLayerWhitelist>
+      <li>Surface</li>
+      <li MayRequire="Ludeon.RimWorld.Odyssey">Orbit</li>
+    </arrivalLayerWhitelist>
+    <requiredMemes>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Collectivist</li>
+      <li MayRequire="Ludeon.RimWorld.Ideology">Loyalist</li>
+    </requiredMemes>
+    <structureMemeWeights>
+      <Structure_Ideological MayRequire="Ludeon.RimWorld.Ideology">1</Structure_Ideological>
+    </structureMemeWeights>
+    <xenotypeSet>
+      <xenotypeChances>
+        <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0.05</Neanderthal>
+        <Hussar MayRequire="Ludeon.RimWorld.Biotech">0.15</Hussar>
+        <Genie MayRequire="Ludeon.RimWorld.Biotech">0.10</Genie>
+        <Starjack MayRequire="Ludeon.RimWorld.Biotech,Ludeon.RimWorld.Odyssey">0.025</Starjack>
+      </xenotypeChances>
+    </xenotypeSet>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>Offworld</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+    <maxPawnCostPerTotalPointsCurve>
+      <points>
+        <li>(0,35)</li>
+        <li>(70, 50)</li>
+        <li>(700, 100)</li>
+        <li>(1300, 150)</li>
+        <li>(100000, 10000)</li>
+      </points>
+    </maxPawnCostPerTotalPointsCurve>
+    <pawnGroupMakers>
+      <li>
+        <kindDef>Combat</kindDef>
+        <commonality>100</commonality>
+        <options>
+          <SMercs_PawnKindDef_SMC_Doc>5</SMercs_PawnKindDef_SMC_Doc>
+          <SMercs_PawnKindDef_SMC_Spacemarine>10</SMercs_PawnKindDef_SMC_Spacemarine>
+          <SMercs_PawnKindDef_SMC_Captain>3</SMercs_PawnKindDef_SMC_Captain>
+        </options>
+      </li>
+    </pawnGroupMakers>
+  </FactionDef>
+</Defs>

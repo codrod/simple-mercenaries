@@ -26,14 +26,19 @@ namespace SimpleMercenaries.Core
         {
             foreach(CompanyDef companyDef in DefDatabase<CompanyDef>.AllDefs)
             {
-                Company company = new Company(companyDef);
-                companies.Add(company);
-                
-                //Hidden factions normally don't have leaders so we have to generate one manually
-                if(company.Faction.leader == null)
+                Faction faction = Find.FactionManager.AllFactions.SingleOrDefault(f => f.def.defName == companyDef.factionDef.defName);
+
+                if(faction != null)
                 {
-                    PawnGenerationRequest request = MercenaryGenerator.GetGenerationRequest(companyDef.factionDef.fixedLeaderKinds.RandomElement());
-                    company.Faction.leader = MercenaryGenerator.Generate(request);
+                    Company company = new Company(companyDef, faction);
+                    companies.Add(company);
+                    
+                    //Hidden factions normally don't have leaders so we have to generate one manually
+                    if(faction.leader == null)
+                    {
+                        PawnGenerationRequest request = MercenaryGenerator.GetGenerationRequest(companyDef.factionDef.fixedLeaderKinds.RandomElement());
+                        faction.leader = MercenaryGenerator.Generate(request);
+                    }
                 }
             }
         }

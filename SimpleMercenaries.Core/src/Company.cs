@@ -110,10 +110,10 @@ namespace SimpleMercenaries.Core
 
         public Company() {}
 
-        public Company(CompanyDef def)
+        public Company(CompanyDef def, Faction faction)
         {
             this.def = def;
-            this.faction = Find.FactionManager.AllFactions.Single(f => f.def.defName == this.def.factionDef.defName);
+            this.faction = faction;
         }
 
         public string GetCallLabel()

@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Defs>
   <FactionDef ParentName="FactionBase" Name="SMercs_FactionDef_Base" Abstract="True">
     <listOrderPriority>10</listOrderPriority>
+    <configurationListOrderPriority>60</configurationListOrderPriority>
+
     <settlementGenerationWeight>0</settlementGenerationWeight>
     <requiredCountAtGameStart>1</requiredCountAtGameStart>
     <maxConfigurableAtWorldCreation>1</maxConfigurableAtWorldCreation>

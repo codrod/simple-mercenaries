@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<PawnKindDef>
+		<defName>SMercs_PawnKindDef_SMC_Spacemarine</defName>
+		<label>spacemarine</label>
+		<combatPower>85</combatPower>
+
+		<race>Human</race>
+		<isFighter>true</isFighter>
+		<forceNormalGearQuality>true</forceNormalGearQuality>
+		<defaultFactionType>SMercs_FactionDef_SMC</defaultFactionType>
+		<minGenerationAge>21</minGenerationAge>
+		<maxGenerationAge>40</maxGenerationAge>
+		<initialResistanceRange>15~23</initialResistanceRange>
+		<initialWillRange>3~5</initialWillRange>
+
+		<fixedChildBackstories>
+			<li>VatgrownSoldier8</li>
+		</fixedChildBackstories>
+		<fixedAdultBackstories>
+			<li>SMercs_BackstoryDef_SMC_Spacemarine</li>
+		</fixedAdultBackstories>
+		<disallowedTraits>
+			<li>Nudist</li>
+			<li>Kind</li>
+			<li>Brawler</li>
+			<li>Pyromaniac</li>
+			<li>Wimp</li>
+			<li>TorturedArtist</li>
+		</disallowedTraits>
+		<disallowedTraitsWithDegree>
+			<SpeedOffset>-1</SpeedOffset>
+			<Nerves>-1</Nerves>
+			<Nerves>-2</Nerves>
+			<Immunity>-1</Immunity>
+		</disallowedTraitsWithDegree>
+
+		<weaponMoney>1100~1500</weaponMoney>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>IndustrialAdvanced</li>
+			<li>IndustrialMilitaryBasic</li>
+		</apparelTags>
+		<apparelRequired>
+			<li>Apparel_PowerArmorHelmet</li>
+			<li>Apparel_PowerArmor</li>
+			<li>Apparel_BasicShirt</li>
+			<li>Apparel_Pants</li>
+		</apparelRequired>
+		<weaponTags>
+			<li>SpacerGun</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<PawnKindDef Abstract="True" Name="SMercs_PawnKindDef_SMC_OfficerBase">
+		<race>Human</race>
+		<isFighter>true</isFighter>
+		<forceNormalGearQuality>true</forceNormalGearQuality>
+		<defaultFactionType>SMercs_FactionDef_SMC</defaultFactionType>
+		<minGenerationAge>30</minGenerationAge>
+		<maxGenerationAge>45</maxGenerationAge>
+		<initialResistanceRange>15~23</initialResistanceRange>
+		<initialWillRange>3~5</initialWillRange>
+
+		<fixedChildBackstories>
+			<li>MidworldCadet83</li>
+			<li>OfficerCadet25</li>
+			<li>StarforceCadet79</li>
+			<li>IdealisticCadet64</li>
+			<li>AcademyStudent58</li>
+			<li>MilitaryCadet16</li>
+			<li>SpaceCadet77</li>
+		</fixedChildBackstories>
+		<disallowedTraits>
+			<li>Nudist</li>
+			<li>Kind</li>
+			<li>Brawler</li>
+			<li>Pyromaniac</li>
+			<li>Wimp</li>
+			<li>TorturedArtist</li>
+		</disallowedTraits>
+		<disallowedTraitsWithDegree>
+			<SpeedOffset>-1</SpeedOffset>
+			<Nerves>-1</Nerves>
+			<Nerves>-2</Nerves>
+			<Immunity>-1</Immunity>
+		</disallowedTraitsWithDegree>
+
+		<weaponMoney>1100~1500</weaponMoney>
+		<apparelTags>
+			<li>IndustrialBasic</li>
+			<li>IndustrialAdvanced</li>
+			<li>IndustrialMilitaryBasic</li>
+		</apparelTags>
+		<apparelRequired>
+			<li>Apparel_PowerArmorHelmet</li>
+			<li>Apparel_PowerArmor</li>
+			<li>Apparel_BasicShirt</li>
+			<li>Apparel_Pants</li>
+		</apparelRequired>
+		<weaponTags>
+			<li>SpacerGun</li>
+		</weaponTags>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_SMC_OfficerBase">
+		<defName>SMercs_PawnKindDef_SMC_Tech</defName>
+		<label>technical officer</label>
+		<combatPower>110</combatPower>
+		<fixedAdultBackstories>
+			<li>SMercs_BackstoryDef_SMC_Tech</li>
+		</fixedAdultBackstories>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_SMC_OfficerBase">
+		<defName>SMercs_PawnKindDef_SMC_Doc</defName>
+		<label>medical officer</label>
+		<combatPower>120</combatPower>
+		<fixedAdultBackstories>
+			<li>SMercs_BackstoryDef_SMC_Doc</li>
+		</fixedAdultBackstories>
+	</PawnKindDef>
+
+	<PawnKindDef ParentName="SMercs_PawnKindDef_SMC_OfficerBase">
+		<defName>SMercs_PawnKindDef_SMC_Captain</defName>
+		<label>spacemarine captain</label>
+		<combatPower>150</combatPower>
+		<fixedAdultBackstories>
+			<li>SMercs_BackstoryDef_SMC_Captain</li>
+		</fixedAdultBackstories>
+		<skills>
+			<li>
+				<skill>Shooting</skill>
+				<range>12~16</range>
+			</li>
+		</skills>
+	</PawnKindDef>
+</Defs>

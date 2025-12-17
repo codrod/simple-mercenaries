@@ -1,28 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <Defs>
-	<!--<SimpleMercenaries.Core.ArmyDef>
-		<defName>SMercs_ArmyDef_ISC</defName>
-		<label>Imperial spacemarine corps</label>
-		<factionDef>SMercs_FactionDef_ISC_Colony</factionDef>
-		<useDropPods>true</useDropPods>
-		<startingUnit>SMercs_UnitDef_ISC_Starting_Unit</startingUnit>
-		<rankList>
-			<li>SMercs_RankDef_ISC_Colonist</li>
-			<li>SMercs_RankDef_ISC_Private</li>
-			<li>SMercs_RankDef_ISC_Corporal</li>
-			<li>SMercs_RankDef_ISC_Sergeant</li>
-			<li>SMercs_RankDef_ISC_Tech</li>
-			<li>SMercs_RankDef_ISC_Doc</li>
-			<li>SMercs_RankDef_ISC_Lieutenant</li>
-			<li>SMercs_RankDef_ISC_Captain</li>
-			<li>SMercs_RankDef_OMC_Gunner</li>
-			<li>SMercs_RankDef_OMC_Grenadier_Destructive</li>
-			<li>SMercs_RankDef_OMC_Slasher</li>
-			<li>SMercs_RankDef_OMC_Sniper</li>
-			<li>SMercs_RankDef_OMC_Elite</li>
-		</rankList>
-	</SimpleMercenaries.Core.ArmyDef>-->
 	<SimpleMercenaries.Core.CompanyDef>
 		<defName>SMercs_CompanyDef_OMC</defName>
 		<label>Outlander mercenary company</label>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+	<BackstoryDef Abstract="True" Name="SMercs_BackstoryDef_SMC_Base">
+		<slot>Adulthood</slot>
+		<bodyTypeGlobal>Hulk</bodyTypeGlobal>
+   		<bodyTypeFemale>Hulk</bodyTypeFemale>
+    	<bodyTypeMale>Hulk</bodyTypeMale>
+		<shuffleable>False</shuffleable>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="SMercs_BackstoryDef_SMC_Base">
+		<defName>SMercs_BackstoryDef_SMC_Spacemarine</defName>
+		<label>spacemarine</label>
+		<identifier>SMercs_BackstoryDef_SMC_Spacemarine</identifier>
+		<description>Since joining the orbital-deployment shock troop corps [PAWN_nameDef] has fought in countless battles with distinction and honor.\n\nEnemies of the empire fear the spacemarines more than any other imperial force, for good reason.</description>
+		<title>Spacemarine</title>
+		<titleShort>Marine</titleShort>
+		<skillGains>
+			<Shooting>6</Shooting>
+			<Melee>4</Melee>
+    	</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef Abstract="True" Name="SMercs_BackstoryDef_SMC_Officer_Base" ParentName="SMercs_BackstoryDef_SMC_Base">
+		<skillGains>
+			<Shooting>2</Shooting>
+			<Melee>2</Melee>
+    	</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="SMercs_BackstoryDef_SMC_Officer_Base">
+		<defName>SMercs_BackstoryDef_SMC_Tech</defName>
+		<label>technical officer</label>
+		<identifier>SMercs_BackstoryDef_SMC_Tech</identifier>
+		<description>During [PAWN_possessive] education at the naval academy [PAWN_nameDef] was selected for tech-ops corps. [PAWN_pronoun] was educated in mathematics, science, and technology\n\nThen assigned to the imperial spacemarine corp as a technical officer.</description>
+		<title>Technical officer</title>
+		<titleShort>Tech</titleShort>
+		<skillGains>
+			<Construction>4</Construction>
+			<Crafting>4</Crafting>
+			<Intellectual>8</Intellectual>
+    	</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="SMercs_BackstoryDef_SMC_Officer_Base">
+		<defName>SMercs_BackstoryDef_SMC_Doc</defName>
+		<label>medical officer</label>
+		<identifier>SMercs_BackstoryDef_SMC_Doc</identifier>
+		<description>During [PAWN_possessive] education at the naval academy [PAWN_nameDef] was selected for the medical corps. [PAWN_pronoun] was educated in surgery, bionics, and combat medicine.\n\nThen assigned to the imperial spacemarine corp as a medical officer.</description>
+		<title>Medical officer</title>
+		<titleShort>Doc</titleShort>
+		<skillGains>
+			<Medicine>8</Medicine>
+			<Social>4</Social>
+    	</skillGains>
+	</BackstoryDef>
+
+	<BackstoryDef ParentName="SMercs_BackstoryDef_SMC_Officer_Base">
+		<defName>SMercs_BackstoryDef_SMC_Captain</defName>
+		<label>spacemarine captain</label>
+		<identifier>SMercs_BackstoryDef_SMC_Captain</identifier>
+		<description>After graduating from the naval academy [PAWN_nameDef] became a commissioned officer in the imperial spacemarine corps.\n\n[PAWN_pronoun] was eventually honored for exceptional service and assigned to the orbital-deployment shock troop division.</description>
+		<title>Spacemarine captain</title>
+		<titleShort>Captain</titleShort>
+		<skillGains>
+			<Social>4</Social>
+			<Shooting>8</Shooting>
+			<Melee>8</Melee>
+    	</skillGains>
+	</BackstoryDef>
+</Defs>
